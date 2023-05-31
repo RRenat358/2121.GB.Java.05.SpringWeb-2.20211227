@@ -14,6 +14,8 @@ Lesson01.VideoPoint
 00-44-00 == Архитектура корзины  
 00-48-00 == List<OrderItem>  
 00-49-45 == inCode. OrderItemDto  
+00-53-30 == Cart  
+01-07-00 == перерыв  
 
 
 
