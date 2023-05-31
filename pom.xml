@@ -17,29 +17,35 @@
     </properties>
 
     <modules>
-<!--        <module>Lesson01-Servlet-API</module>-->
-<!--        <module>Lesson02-Spring-Basics</module>-->
+        <module>Lesson01-Base</module>
+
+<!--        <module>Lesson02-Blocks</module>-->
 <!--        <module>Lesson02_HW</module>-->
-<!--        <module>Lesson03-Spring-MVC</module>-->
+
+<!--        <module>Lesson03-SpEL</module>-->
 <!--        <module>Lesson03_HW</module>-->
 
-<!--        <module>Lesson04-Spring-Boot</module>-->
+<!--        <module>Lesson04-Web</module>-->
 <!--        <module>Lesson04_HW</module>-->
 
-<!--        <module>Lesson05-Hibernate</module>-->
+<!--        <module>Lesson05-Cloud1</module>-->
 <!--        <module>Lesson05_HW</module>-->
-<!--        <module>Lesson06-Hibernate</module>-->
 
-<!--        <module>Lesson07-Spring-Data</module>-->
+<!--        <module>Lesson06-Cloud2</module>-->
+
+<!--        <module>Lesson07-Test</module>-->
 <!--        <module>Lesson07_HW</module>-->
-<!--        <module>Lesson08-Thymeleaf</module>-->
+
+<!--        <module>Lesson08-Integration</module>-->
 <!--        <module>Lesson08_HW</module>-->
-<!--        <module>Lesson09-REST</module>-->
+
+<!--        <module>Lesson09</module>-->
 <!--        <module>Lesson09_HW</module>-->
-<!--        <module>Lesson10-REST-2</module>-->
+
+<!--        <module>Lesson10</module>-->
 <!--        <module>Lesson10_HW</module>-->
 
-<!--        <module>Lesson11-Spring-Security</module>-->
+<!--        <module>Lesson11</module>-->
 <!--        <module>Lesson11_HW</module>-->
 
 
