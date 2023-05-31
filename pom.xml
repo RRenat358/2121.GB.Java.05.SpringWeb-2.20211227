@@ -18,6 +18,7 @@
 
     <modules>
         <module>Lesson01-Base</module>
+        <module>Lesson01_HW</module>
 
 <!--        <module>Lesson02-Blocks</module>-->
 <!--        <module>Lesson02_HW</module>-->
