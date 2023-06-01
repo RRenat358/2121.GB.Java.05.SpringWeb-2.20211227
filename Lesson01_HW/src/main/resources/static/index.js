@@ -68,8 +68,8 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             });
     }
 
+    //============================================================
     /*
-        //============================================================
         //Page<Product> findByFilter()
         $scope.loadBasket = function (id) {
             // console.log($scope.filter);
@@ -85,6 +85,13 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             });
         }
     */
+
+    $scope.addToCart = function (id) {
+        $http.get('http://localhost:8189/app/api/v1/carts/add' + id)
+            .then(function (response) {
+                $scope.loadCart();
+            });
+    }
 
     //============================================================
     $scope.tryToAuth = function () {

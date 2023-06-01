@@ -20,6 +20,8 @@ Lesson01.VideoPoint
 01-13-50 == CartService  
 01-16-00 == корзина на всех одна, как с заглушкой  
 01-20-30 == CartsController  
+01-26-00 == front. addToCart()  
+01-29-00 == front. loadCart()  
 
 
 
