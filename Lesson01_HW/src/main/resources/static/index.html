@@ -58,7 +58,7 @@
             <td>ID</td>
             <td>Товар</td>
             <td>Цена</td>
-            <td>Изменить цену</td>
+<!--            <td>Изменить цену</td>-->
             <td>Действие</td>
         </tr>
         <tbody>
@@ -66,11 +66,11 @@
             <td>{{p.id}}</td>
             <td>{{p.name}}</td>
             <td>{{p.price}}</td>
-            <td>
-                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>
-                {{p.price}}
-                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>
-            </td>
+<!--            <td>-->
+<!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>-->
+<!--                {{p.price}}-->
+<!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>-->
+<!--            </td>-->
             <td>
                 <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
             </td>
@@ -84,34 +84,37 @@
     <br>
 
     <!--============================================================-->
+<!--
     <hr>
     <h4>Фильтр продуктов</h4>
     <form novalidate ng-submit="loadProduct()">
         <div class="form-floating input-group-sm">
             <input type="text" class="form-control" id="filterName" placeholder="имя " ng-model="filter.namePart">
-            <!--            <label for="filterName">имя продукта</label>-->
+            &lt;!&ndash;            <label for="filterName">имя продукта</label>&ndash;&gt;
         </div>
         <br>
         <div class="form-floating input-group-sm">
             <input type="number" class="form-control" id="filterMinPrice" placeholder="цена от "
                    ng-model="filter.minPrice">
-            <!--            <label for="filterMinPrice">мин. цена</label>-->
+            &lt;!&ndash;            <label for="filterMinPrice">мин. цена</label>&ndash;&gt;
         </div>
         <br>
         <div class="form-floating input-group-sm">
             <input type="number" class="form-control" id="filterMaxPrice" placeholder="цена до "
                    ng-model="filter.maxPrice">
-            <!--            <label for="filterMaxPrice">макс. цена</label>-->
+            &lt;!&ndash;            <label for="filterMaxPrice">макс. цена</label>&ndash;&gt;
         </div>
         <br>
-        <!--        <button type="submit" class="btn btn-primary">OK</button>-->
+        &lt;!&ndash;        <button type="submit" class="btn btn-primary">OK</button>&ndash;&gt;
         <button class="btn btn-outline-warning btn-sm" style="width: 100%;" type="submit">Применить</button>
     </form>
     <br>
     <br>
 
+-->
 
     <!--============================================================-->
+<!--
     <hr>
     <h4>Добавить Продукт</h4>
     <form novalidate ng-submit="saveNewProductFun()">
@@ -123,39 +126,40 @@
     </form>
     <br>
 
+-->
     <!--============================================================-->
-
     <hr>
     <h3>Корзина</h3>
     <table class="table table-hover" cellpadding="0" cellspacing="0">
         <tr>
-            <td>ID</td>
+<!--            <td>ID</td>-->
             <td>Товар</td>
-            <td>Цена</td>
-            <td>Изменить цену</td>
             <td>Количество</td>
-            <td>Действие</td>
+            <td>Цена</td>
+<!--            <td>Изменить цену</td>-->
+<!--            <td>Действие</td>-->
         </tr>
         <tbody>
-        <tr ng-repeat="item in Cart.items">
-            <td>{{item.id}}</td>
+        <tr ng-repeat="item in Cart.itemList">
+<!--            <td>{{item.id}}</td>-->
             <td>{{item.productName}}</td>
+            <td>{{item.quantity}}</td>
             <td>{{item.pricePerProduct + ' x ' + item.quantity + ' = ' + item.price}}</td>
-            <td>
-                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>
-                {{item.pricePerProduct}}
-                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>
-            </td>
+<!--            <td>-->
+<!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>-->
+<!--                {{item.pricePerProduct}}-->
+<!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>-->
+<!--            </td>-->
+<!--            <td></td>-->
         <tr>
             <td></td>
             <td>Итого</td>
             <td>{{Cart.totalPrice}}</td>
         </tr>
 
-        <td>
-            <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
-        </td>
-        </tr>
+<!--        <td>-->
+<!--            <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>-->
+<!--        </td>-->
         </tbody>
     </table>
     <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
