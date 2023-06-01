@@ -69,23 +69,6 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
     }
 
     //============================================================
-    /*
-        //Page<Product> findByFilter()
-        $scope.loadBasket = function (id) {
-            // console.log($scope.filter);
-            $http({
-                url: contextPath + '/baskets',
-                method: 'GET',
-                params: {
-                    id: $scope.filter ? $scope.filter.id : null
-                }
-            }).then(function (response) {
-                $scope.BasketList = response.data;
-                // $scope.loadProduct();
-            });
-        }
-    */
-
     $scope.addToCart = function (id) {
         $http.get('http://localhost:8189/app/api/v1/carts/add/' + id)
             .then(function (response) {
