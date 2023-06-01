@@ -24,16 +24,12 @@ Lesson01.VideoPoint
 01-29-00 == front. loadCart()  
 01-34-00 == front. clearCart()  
 01-36-00 == вопросы  
-
-
-
-
-
-
-
-
-
-
+01-39-00 == оформить заказ = HomeWork  
+01-41-00 == DB    
+01-49-00 == HomeWork    
+01-51-00 == HomeWork    
+01-56-00 == HomeWork    
+02-00-00 == планы на будущие уроки
 //end  
 
 
