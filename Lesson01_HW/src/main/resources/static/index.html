@@ -89,17 +89,19 @@
     <form novalidate ng-submit="loadProduct()">
         <div class="form-floating input-group-sm">
             <input type="text" class="form-control" id="filterName" placeholder="имя " ng-model="filter.namePart">
-<!--            <label for="filterName">имя продукта</label>-->
+            <!--            <label for="filterName">имя продукта</label>-->
         </div>
         <br>
         <div class="form-floating input-group-sm">
-            <input type="number" class="form-control" id="filterMinPrice" placeholder="цена от " ng-model="filter.minPrice">
-<!--            <label for="filterMinPrice">мин. цена</label>-->
+            <input type="number" class="form-control" id="filterMinPrice" placeholder="цена от "
+                   ng-model="filter.minPrice">
+            <!--            <label for="filterMinPrice">мин. цена</label>-->
         </div>
         <br>
         <div class="form-floating input-group-sm">
-            <input type="number" class="form-control" id="filterMaxPrice" placeholder="цена до " ng-model="filter.maxPrice">
-<!--            <label for="filterMaxPrice">макс. цена</label>-->
+            <input type="number" class="form-control" id="filterMaxPrice" placeholder="цена до "
+                   ng-model="filter.maxPrice">
+            <!--            <label for="filterMaxPrice">макс. цена</label>-->
         </div>
         <br>
         <!--        <button type="submit" class="btn btn-primary">OK</button>-->
@@ -123,7 +125,6 @@
 
     <!--============================================================-->
 
-<!--
     <hr>
     <h3>Корзина</h3>
     <table class="table table-hover" cellpadding="0" cellspacing="0">
@@ -132,47 +133,54 @@
             <td>Товар</td>
             <td>Цена</td>
             <td>Изменить цену</td>
+            <td>Количество</td>
             <td>Действие</td>
         </tr>
         <tbody>
-        <tr ng-repeat="p in BasketList.content">
-            <td>{{p.id}}</td>
-            <td>{{p.name}}</td>
-            <td>{{p.price}}</td>
+        <tr ng-repeat="item in Cart.items">
+            <td>{{item.id}}</td>
+            <td>{{item.productName}}</td>
+            <td>{{item.pricePerProduct + ' x ' + item.quantity + ' = ' + item.price}}</td>
             <td>
                 <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>
-                {{p.price}}
+                {{item.pricePerProduct}}
                 <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>
             </td>
-            <td>
-                <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
-            </td>
+        <tr>
+            <td></td>
+            <td>Итого</td>
+            <td>{{Cart.totalPrice}}</td>
+        </tr>
+
+        <td>
+            <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
+        </td>
         </tr>
         </tbody>
     </table>
+    <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
+
     <br>
     <br>
 
--->
 
     <hr>
     <!--============================================================-->
 
-<!--
-    <hr>
-    <h4>Добавить нового Пользователя</h4>
-    <form novalidate ng-submit="saveNewUser()">
-        <input class="form-control" type="text" id="addUserName" placeholder="имя пользователя" ng-model="newUser.name">
+    <!--
+        <hr>
+        <h4>Добавить нового Пользователя</h4>
+        <form novalidate ng-submit="saveNewUser()">
+            <input class="form-control" type="text" id="addUserName" placeholder="имя пользователя" ng-model="newUser.name">
+            <br>
+            <input class="form-control" type="text" id="addUserPassword" placeholder="пароль" ng-model="newUser.password">
+            <br>
+            <input class="form-control" type="text" id="addUserEmail" placeholder="email" ng-model="newUser.email">
+            <br>
+            <button type="submit" class="btn btn-outline-success">Сохранить</button>
+        </form>
         <br>
-        <input class="form-control" type="text" id="addUserPassword" placeholder="пароль" ng-model="newUser.password">
-        <br>
-        <input class="form-control" type="text" id="addUserEmail" placeholder="email" ng-model="newUser.email">
-        <br>
-        <button type="submit" class="btn btn-outline-success">Сохранить</button>
-    </form>
-    <br>
--->
-
+    -->
 
 
     <hr>

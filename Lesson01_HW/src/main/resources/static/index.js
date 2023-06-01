@@ -93,6 +93,22 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             });
     }
 
+    $scope.loadCart = function () {
+        $http.get('http://localhost:8189/app/api/v1/carts')
+            .then(function (response) {
+                $scope.Cart = response.data;
+            });
+    }
+
+    $scope.clearCart = function () {
+        $http.get('http://localhost:8189/app/api/v1/carts/clear')
+            .then(function (response) {
+                $scope.loadCart();
+            });
+    }
+
+
+
     //============================================================
     $scope.tryToAuth = function () {
         $http.post('http://localhost:8189/app/auth', $scope.user)
@@ -177,4 +193,5 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
 
 
     $scope.loadProduct();
+    $scope.loadCart();
 });

@@ -22,6 +22,8 @@ Lesson01.VideoPoint
 01-20-30 == CartsController  
 01-26-00 == front. addToCart()  
 01-29-00 == front. loadCart()  
+01-34-00 == front. clearCart()  
+01-36-00 == вопросы  
 
 
 
