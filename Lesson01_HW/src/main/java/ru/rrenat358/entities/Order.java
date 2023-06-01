@@ -25,6 +25,7 @@ public class Order {
     private Long id;
 
 
+//    @OneToOne
     @Column(name = "user_id")
     private int userId;
 
