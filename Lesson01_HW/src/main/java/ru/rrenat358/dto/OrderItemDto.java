@@ -6,7 +6,6 @@ import ru.rrenat358.entities.Product;
 
 @Data
 @NoArgsConstructor
-
 public class OrderItemDto {
 
     private Long productId;

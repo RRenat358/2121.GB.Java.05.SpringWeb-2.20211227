@@ -1,13 +1,11 @@
 package ru.rrenat358.dto;
 
-
 import lombok.Data;
 import ru.rrenat358.entities.Product;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 
 @Data
 public class Cart {
