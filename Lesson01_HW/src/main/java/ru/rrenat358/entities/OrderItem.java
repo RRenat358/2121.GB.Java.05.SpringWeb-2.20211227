@@ -20,14 +20,17 @@ public class OrderItem {
     @Column(name = "id")
     Long id;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @OneToOne
+    @JoinColumn(name = "product_id")
+    private Product productId;
 
-    @Column(name = "user_id")
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User userId;
 
-    @Column(name = "order_id")
-    private Long orderId;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order orderId;
 
 
     @Column(name = "quantity")
