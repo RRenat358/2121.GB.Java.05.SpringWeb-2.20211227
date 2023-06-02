@@ -39,8 +39,8 @@ public class Order {
     private String phone;
 
 
-//    @OneToMany
-//    private List<OrderItem> orderItems;
+//    @OneToMany(mappedBy = "order", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+//    private List<OrderItem> items;
 
 
 }

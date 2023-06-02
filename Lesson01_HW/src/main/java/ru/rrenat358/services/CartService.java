@@ -23,11 +23,6 @@ public class CartService {
         return cart;
     }
 
-    public Cart getCurrentCart(Cart cart) {
-        cart = this.cart;
-        return cart;
-    }
-
 
     public void addProductByIdToCart(Long productId) {
         if (!getCurrentCart().addProduct(productId)) {
