@@ -7,8 +7,10 @@ import ru.rrenat358.dto.Cart;
 import ru.rrenat358.dto.OrderDto;
 import ru.rrenat358.dto.OrderItemDto;
 import ru.rrenat358.entities.Order;
+import ru.rrenat358.entities.User;
 import ru.rrenat358.repositories.OrderItemsRepository;
 import ru.rrenat358.repositories.OrderRepository;
+import ru.rrenat358.repositories.UserRepository;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,10 +22,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class OrderService {
 
+    private final Order order;
     private final OrderDto orderDto;
     private final OrderRepository orderRepository;
     private final OrderItemsRepository orderItemsRepository;
     private final CartService cartService;
+    private final UserRepository userRepository;
+
+
 
     public void addCartToOrder(Cart cart) {
         orderDto.getOrderItemList().addAll(cartService.getCurrentCart(cart).getItemList());
@@ -74,15 +80,28 @@ public class OrderService {
     public void addCartToOrder5() {
         orderDto.getOrderItemList().addAll(cartService.getCurrentCart(cart).getItemList());
         List<OrderItemDto> orderItemDtos = orderDto.getOrderItemList();
-        orderItemsRepository.saveAll(orderDto.getOrderItemList());
+        List<OrderItemDto> orderItemDtos2 = orderItemsRepository.saveAll(orderItemDtos);
+    }
+
+
+    public void newOreder(User userId, String address, String phone) {
+//        Order order = new Order();
+        Cart cart = cartService.getCurrentCart();
+        List<OrderItemDto> itemList = cart.getItemList();
+
+//        order.setUserId();
+        order.setTotalPrice(cart.getTotalPrice());
+        order.setAddress(address);
+        order.setAddress(phone);
+
+
+
+        orderDto.getOrderItemList().addAll(cartService.getCurrentCart(cart).getItemList());
+        List<OrderItemDto> orderItemDtos = orderDto.getOrderItemList();
+        List<OrderItemDto> orderItemDtos2 = orderItemsRepository.saveAll(orderItemDtos);
     }
 
 
 
-//    @Transactional
-//    public List<Student> saveAllStudent(List<Student> studentList) {
-//        List<Student> response = (List<Student>) studentRepository.saveAll(studentList);
-//        return response;
-//    }
 
 }

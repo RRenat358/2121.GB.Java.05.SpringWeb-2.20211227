@@ -33,10 +33,10 @@ public class Order {
     private int totalPrice;
 
     @Column(name = "address")
-    private int address;
+    private String address;
 
     @Column(name = "phone")
-    private int phone;
+    private String phone;
 
 
 

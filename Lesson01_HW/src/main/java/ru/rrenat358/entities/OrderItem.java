@@ -25,10 +25,6 @@ public class OrderItem {
     private Product productId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User userId;
-
-    @ManyToOne
     @JoinColumn(name = "order_id")
     private Order orderId;
 
