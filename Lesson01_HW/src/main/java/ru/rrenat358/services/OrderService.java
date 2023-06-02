@@ -32,7 +32,7 @@ public class OrderService {
 
 
     public void createOrder(User user, String address, String phone) {
-//        Order order = new Order();
+        Order order = new Order();
         Cart cart = cartService.getCurrentCart();
 //        List<OrderItemDto> itemList = cart.getItemList();
 
@@ -41,11 +41,8 @@ public class OrderService {
         order.setAddress(address);
         order.setAddress(phone);
 
-//        orderDto.getOrderItemList().addAll(cartService.getCurrentCart(cart).getItemList());
-//        List<OrderItemDto> orderItemDtos = orderDto.getOrderItemList();
-//        List<OrderItemDto> orderItemDtos2 = orderItemsRepository.saveAll(orderItemDtos);
-
         orderRepository.save(order);
+        cart.clear();
     }
 
 
