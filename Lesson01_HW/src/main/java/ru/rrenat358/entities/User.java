@@ -44,5 +44,11 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+//    @ManyToOne
+//    @JoinTable(name = "orders",
+//    joinColumns = @JoinColumn(name = "order_id"))
+//    private Order order;
+
+
 
 }

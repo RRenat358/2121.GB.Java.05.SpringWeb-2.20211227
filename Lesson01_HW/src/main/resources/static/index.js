@@ -173,6 +173,17 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
 */
 
     //============================================================
+    $scope.createOrder = function (address, phone) {
+        $http.post('http://localhost:8189/app/api/v1/orders', $scope.newUser)
+            .then(function (response) {
+                console.log($scope.newUser);
+                // $scope.loadProduct();
+            });
+    }
+
+
+
+    //============================================================
 
 
     $scope.loadProduct();

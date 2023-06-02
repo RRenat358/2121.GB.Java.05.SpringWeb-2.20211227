@@ -23,6 +23,7 @@ public class CartService {
         return cart;
     }
 
+
     public void addProductByIdToCart(Long productId) {
         if (!getCurrentCart().addProduct(productId)) {
             Product product = productsService.findById(productId)
