@@ -36,7 +36,7 @@ public class OrderService {
         Cart cart = cartService.getCurrentCart();
 //        List<OrderItemDto> itemList = cart.getItemList();
 
-        order.setUserId(user);
+        order.setUser(user);
         order.setTotalPrice(cart.getTotalPrice());
         order.setAddress(address);
         order.setAddress(phone);

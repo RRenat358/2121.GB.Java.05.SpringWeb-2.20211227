@@ -14,7 +14,7 @@ public class OrderDto {
 
     private List<OrderItemDto> orderItemList;
 
-    private int userId;
+    private int user;
 
     private int totalPrice;
 

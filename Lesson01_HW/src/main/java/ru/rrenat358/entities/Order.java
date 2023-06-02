@@ -25,9 +25,9 @@ public class Order {
     private Long id;
 
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
 
     @Column(name = "total_price")
     private int totalPrice;

@@ -20,13 +20,13 @@ public class OrderItem {
     @Column(name = "id")
     Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product productId;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order orderId;
+    private Order order;
 
 
     @Column(name = "quantity")
