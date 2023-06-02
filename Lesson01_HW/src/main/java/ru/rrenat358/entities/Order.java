@@ -39,5 +39,8 @@ public class Order {
     private String phone;
 
 
+//    @OneToMany
+//    private List<OrderItem> orderItems;
+
 
 }

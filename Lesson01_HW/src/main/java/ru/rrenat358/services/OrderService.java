@@ -63,6 +63,7 @@ public class OrderService {
 
         orderDto.getOrderItemList().addAll(cart.getItemList());
 
+        orderRepository.save(orderItemList);
 //        orderRepository.saveAll(orderItemList);
         orderRepository.saveAll(orderItemList.listIterator().hasNext());
 
@@ -84,7 +85,7 @@ public class OrderService {
     }
 
 
-    public void newOreder(User userId, String address, String phone) {
+    public void createOreder(User user, String address, String phone) {
 //        Order order = new Order();
         Cart cart = cartService.getCurrentCart();
         List<OrderItemDto> itemList = cart.getItemList();
