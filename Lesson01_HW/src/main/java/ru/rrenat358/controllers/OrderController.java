@@ -32,7 +32,7 @@ public class OrderController {
         User user = userService.findByUsername(principal.getName())
                 .orElseThrow(() -> new RuntimeException("noUser"));
 
-        orderService.addCartToOrder(user, address, phone);
+        orderService.createOrder(user, address, phone);
     }
 
 
