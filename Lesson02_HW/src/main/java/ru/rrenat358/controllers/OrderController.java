@@ -2,10 +2,8 @@ package ru.rrenat358.controllers;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.dto.Cart;
 import ru.rrenat358.dto.OrderDetailsDto;
 import ru.rrenat358.entities.User;
@@ -25,12 +23,14 @@ public class OrderController {
     private final Cart cart;
 
 
-    @GetMapping("/create")
-    public void createOrder(Principal principal, @RequestBody OrderDetailsDto orderDetailsDto) {
-
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createOrder(
+            Principal principal,
+            @RequestBody OrderDetailsDto orderDetailsDto
+    ) {
         User user = userService.findByUsername(principal.getName())
                 .orElseThrow(() -> new RuntimeException("noUser"));
-
         orderService.createOrder(user, orderDetailsDto);
     }
 

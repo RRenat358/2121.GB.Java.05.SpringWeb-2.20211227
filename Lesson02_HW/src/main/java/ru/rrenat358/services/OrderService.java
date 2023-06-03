@@ -35,7 +35,6 @@ public class OrderService {
     public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
         Order order = new Order();
         Cart cart = cartService.getCurrentCart();
-//        List<OrderItemDto> itemList = cart.getItemList();
 
         order.setUser(user);
         order.setTotalPrice(cart.getTotalPrice());
@@ -54,8 +53,6 @@ public class OrderService {
                     orderItem.setPricePerProduct(orderItemDto.getPricePerProduct());
                     orderItem.setProduct(productsService.findById(orderItemDto.getProductId())
                             .orElseThrow(() -> new RuntimeException("Продукт не найден")));
-
-
                     return orderItem;
                 }).collect(Collectors.toList());
 
@@ -63,12 +60,6 @@ public class OrderService {
         orderRepository.save(order);
         cart.clear();
     }
-
-
-//    public List<Order> orderListByUsername() {
-//        orderRepository.findAllByUsername();
-//        return ;
-//    }
 
 
 
