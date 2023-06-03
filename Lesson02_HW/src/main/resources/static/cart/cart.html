@@ -12,7 +12,7 @@
             <!--            <td>Действие</td>-->
         </tr>
         <tbody>
-        <tr ng-repeat="item in Cart.itemList">
+        <tr ng-repeat="item in cart.itemList">
             <!--            <td>{{item.id}}</td>-->
             <td>{{item.productName}}</td>
             <td>{{item.quantity}}</td>
@@ -26,7 +26,7 @@
         <tr>
             <td></td>
             <td>Итого</td>
-            <td>{{Cart.totalPrice}}</td>
+            <td>{{cart.totalPrice}}</td>
         </tr>
         <!--        <td>-->
         <!--            <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>-->

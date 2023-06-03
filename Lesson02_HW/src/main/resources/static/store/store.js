@@ -4,7 +4,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
     //============================================================
     //Page<Product> findByFilter()
     $scope.loadProducts = function (pageIndex = 1) {
-        console.log($scope.filter);
+        // console.log($scope.filter);
         $http({
             url: contextPath + 'api/v1/products',
             method: 'GET',
@@ -14,7 +14,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
                 maxPrice: $scope.filter ? $scope.filter.maxPrice : null
             }
         }).then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             $scope.ProductList = response.data;
             // $scope.loadBasket();
         });
