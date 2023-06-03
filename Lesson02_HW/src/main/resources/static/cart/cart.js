@@ -21,7 +21,7 @@ angular.module('market-front').controller('cartController', function ($scope, $h
 
 
     $scope.disabledCheckOut = function () {
-        alert("Для оформления заказа необходимо войти в учетную запись");
+        alert("Для оформления заказа необходимо войти в учётную запись");
     }
 
     $scope.clearCart = function () {
