@@ -1,9 +1,42 @@
+
+//============================================================
+(function () {
+    angular
+        .module('market-front', ['ngRoute', 'ngStorage'])
+        .config(config)
+        .run(run);
+
+    function config($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'welcome/welcome.html',
+                controller: 'welcomeController'
+            })
+            .when('/store', {
+                templateUrl: 'store/store.html',
+                controller: 'storeController'
+            })
+            .when('/cart', {
+                templateUrl: 'cart/cart.html',
+                controller: 'cartController'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    }
+
+    function run($rootScope, $http, $localStorage) {
+        if ($localStorage.springWebUser) {
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.springWebUser.token;
+        }
+    }
+})();
+
+
+//============================================================
+//============================================================
 angular.module('market-front', ['ngStorage']).controller('indexController', function ($scope, $rootScope, $http, $localStorage) {
     const contextPath = 'http://localhost:8189/app/api/v1';
-
-    if ($localStorage.springWebUser) {
-        $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.springWebUser.token;
-    }
 
 
 
@@ -17,6 +50,8 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
 
                     $scope.user.username = null;
                     $scope.user.password = null;
+
+                    $location.path('/');
                 }
             }, function errorCallback(response) {
             });
@@ -24,12 +59,8 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
 
     $scope.tryToLogout = function () {
         $scope.clearUser();
-        if ($scope.user.username) {
-            $scope.user.username = null;
-        }
-        if ($scope.user.password) {
-            $scope.user.password = null;
-        }
+        $scope.user = null;
+        $location.path('/');
     };
 
     $scope.clearUser = function () {
@@ -56,7 +87,7 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
             }, function errorCallback(response) {
                 alert('UNAUTHORIZED');
             });
-    }
+    };
 
     //============================================================
     // $scope.saveNewUser = function () {
@@ -97,7 +128,4 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
     //============================================================
 
 
-    $scope.loadProduct();
-    $scope.loadCart();
-    $scope.loadOrders();
 });
