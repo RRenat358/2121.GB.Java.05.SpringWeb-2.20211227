@@ -162,15 +162,23 @@
         </tbody>
     </table>
     <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
+    <br>
+
+    <!--============================================================-->
+    <hr>
+    <h3>Детали заказа</h3>
+    <form novalidate>
+        <input class="form-control" type="text" placeholder="Номер телефона получателя" ng-model="orderDetails.phone">
+        <p></p>
+        <input class="form-control" type="text" placeholder="Адрес доставки" ng-model="orderDetails.address">
+        <p></p>
+    </form>
     <button class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>
     <br>
-    <br>
 
-
-    <hr>
     <!--============================================================-->
     <!--
-        <hr>
+    <hr>
         <h4>Добавить нового Пользователя</h4>
         <form novalidate ng-submit="saveNewUser()">
             <input class="form-control" type="text" id="addUserName" placeholder="имя пользователя" ng-model="newUser.name">
@@ -182,9 +190,9 @@
             <button type="submit" class="btn btn-outline-success">Сохранить</button>
         </form>
         <br>
-    -->
 
     <hr>
+    -->
     <!--============================================================-->
     <!-- //end container-->
 </div>
