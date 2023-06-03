@@ -9,7 +9,7 @@ import ru.rrenat358.dto.Cart;
 import ru.rrenat358.services.CartService;
 
 @RestController
-@RequestMapping("/api/v1/carts")
+@RequestMapping("/api/v1/cart")
 @RequiredArgsConstructor
 public class CartsController {
     private final CartService cartService;

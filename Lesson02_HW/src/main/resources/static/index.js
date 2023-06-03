@@ -1,4 +1,4 @@
-angular.module('app', ['ngStorage']).controller('indexController', function ($scope, $rootScope, $http, $localStorage) {
+angular.module('market-front', ['ngStorage']).controller('indexController', function ($scope, $rootScope, $http, $localStorage) {
     const contextPath = 'http://localhost:8189/app/api/v1';
 
     if ($localStorage.springWebUser) {
@@ -76,19 +76,6 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
             });
     }
 
-    $scope.clearCart = function () {
-        $http.get('http://localhost:8189/app/api/v1/carts/clear')
-            .then(function (response) {
-                $scope.loadCart();
-            });
-    }
-
-    $scope.loadCart = function () {
-        $http.get('http://localhost:8189/app/api/v1/carts')
-            .then(function (response) {
-                $scope.Cart = response.data;
-            });
-    }
 
 
 
@@ -183,18 +170,6 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
     }
 */
 
-    $scope.createOrder = function () {
-        $http({
-            url: 'http://localhost:8189/app/api/v1/orders',
-            method: 'POST',
-
-            data: $scope.orderDetails
-        }).then(function (response) {
-            $scope.loadCart();
-            $scope.loadOrders();
-            $scope.orderDetails = null
-        });
-    }
 
 
     $scope.loadOrders = function () {
