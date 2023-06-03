@@ -47,8 +47,14 @@ public class Product {
     String groupProduct;
 
 
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
-    //ProductDto
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
 
 
     public Product(Long id, String name, Integer price) {
@@ -59,14 +65,6 @@ public class Product {
 
 
 
-
-    @CreationTimestamp
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 
 
 }

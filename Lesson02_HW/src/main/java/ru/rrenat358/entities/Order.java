@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -36,8 +37,8 @@ public class Order {
     private String phone;
 
 
-//    @OneToMany(mappedBy = "order", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-//    private List<OrderItem> items;
+    @OneToMany(mappedBy = "order", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private List<OrderItem> items;
 
 
 
