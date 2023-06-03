@@ -24,9 +24,9 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final Cart cart;
-    private final OrderService orderService;
+    //    private final Cart cart;
     private final UserService userService;
+    private final OrderService orderService;
     private final OrderConverter orderConverter;
 
 
