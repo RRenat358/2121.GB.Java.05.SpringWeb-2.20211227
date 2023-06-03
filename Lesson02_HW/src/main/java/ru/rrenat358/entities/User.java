@@ -36,6 +36,13 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
+
+//    @ManyToOne
+//    @JoinTable(name = "orders",
+//    joinColumns = @JoinColumn(name = "order_id"))
+//    private Order order;
+
+
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -43,12 +50,6 @@ public class User {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
-//    @ManyToOne
-//    @JoinTable(name = "orders",
-//    joinColumns = @JoinColumn(name = "order_id"))
-//    private Order order;
-
 
 
 }

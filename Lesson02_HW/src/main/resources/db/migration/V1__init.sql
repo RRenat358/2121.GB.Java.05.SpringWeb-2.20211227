@@ -16,11 +16,19 @@ values ('Milk', 100),
 */
 
 -- //============================================================
-create table products (id bigserial primary key,
-                                     name varchar(255),
-    proteins varchar(255), fats varchar(255), carbohydrates varchar(255), calories varchar(255),
-    group_product varchar(255),
-    price int);
+create table products (
+    id bigserial        primary key,
+    name                varchar(255),
+    proteins            varchar(255),
+    fats                varchar(255),
+    carbohydrates       varchar(255),
+    calories            varchar(255),
+    group_product       varchar(255),
+    price               int,
+
+    created_at          timestamp default current_timestamp,
+    updated_at          timestamp default current_timestamp
+                      );
 
 insert into products (
     name,
@@ -124,25 +132,27 @@ values
 -- //============================================================
 
 create table users (
-    id         bigserial primary key,
-    username   varchar(36) not null,
-    password   varchar(80) not null,
-    email      varchar(50) unique,
-    created_at timestamp default current_timestamp,
-    updated_at timestamp default current_timestamp
+    id              bigserial primary key,
+    username        varchar(36) not null,
+    password        varchar(80) not null,
+    email           varchar(50) unique,
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp
 );
 
 create table roles (
-    id         bigserial primary key,
-    name       varchar(50) not null,
-    created_at timestamp default current_timestamp,
-    updated_at timestamp default current_timestamp
+    id              bigserial primary key,
+    name            varchar(50) not null,
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp
 );
 
 CREATE TABLE users_roles (
-    user_id bigint not null references users (id),
-    role_id bigint not null references roles (id),
-    primary key (user_id, role_id)
+    user_id         bigint not null references users (id),
+    role_id         bigint not null references roles (id),
+    primary key (user_id, role_id),
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp
 );
 
 insert into roles (name)
@@ -169,17 +179,21 @@ create table orders (
     user_id         bigint not null references users (id),
     total_price     int not null,
     address         varchar(255),
-    phone           varchar(255)
-)
+    phone           varchar(255),
+    created_at      timestamp default current_timestamp,
+    updated_at      timestamp default current_timestamp
+);
 
 create table order_items (
-    id                      bigserial primary key,
-    product_id              bigint not null references products (id),
-    order_id                bigint not null references orders (id),
-    quantity                int not null,
-    price_per_product       int not null,
-    price                   int not null
-)
+    id                  bigserial primary key,
+    product_id          bigint not null references products (id),
+    order_id            bigint not null references orders (id),
+    quantity            int not null,
+    price_per_product   int not null,
+    price               int not null,
+    created_at          timestamp default current_timestamp,
+    updated_at          timestamp default current_timestamp
+);
 
 -- //============================================================
 
