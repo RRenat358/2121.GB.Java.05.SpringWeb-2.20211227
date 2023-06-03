@@ -35,7 +35,7 @@
 
 //============================================================
 //============================================================
-angular.module('market-front', ['ngStorage']).controller('indexController', function ($scope, $rootScope, $http, $localStorage) {
+angular.module('market-front', ['ngStorage']).controller('indexController', function ($scope, $rootScope, $http, $location, $localStorage) {
     const contextPath = 'http://localhost:8189/app/api/v1';
 
 
