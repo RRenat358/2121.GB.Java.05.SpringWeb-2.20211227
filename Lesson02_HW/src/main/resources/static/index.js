@@ -6,78 +6,6 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
     }
 
 
-    //============================================================
-    //Page<Product> findByFilter()
-    $scope.loadProduct = function (pageIndex = 1) {
-        console.log($scope.filter);
-        $http({
-            url: contextPath + '/products',
-            method: 'GET',
-            params: {
-                namePart: $scope.filter ? $scope.filter.namePart : null,
-                minPrice: $scope.filter ? $scope.filter.minPrice : null,
-                maxPrice: $scope.filter ? $scope.filter.maxPrice : null
-            }
-        }).then(function (response) {
-            console.log(response.data);
-            $scope.ProductList = response.data;
-            // $scope.loadBasket();
-        });
-    }
-
-    //============================================================
-    $scope.deleteProduct = function (productId) {
-        $http.delete(contextPath + '/products/' + productId)
-            .then(function (response) {
-                $scope.loadProduct();
-            });
-    }
-
-    $scope.changePrice = function (id, newPrice) {
-        $http({
-            url: contextPath + '/products/change-price',
-            method: 'PATCH',
-            params: {
-                productId: id,
-                newPrice: newPrice
-            }
-        }).then(function (response) {
-            $scope.loadProduct();
-        });
-    }
-
-    $scope.changePriceToDelta = function (id, delta) {
-        $http({
-            url: contextPath + '/products/change-price-to-delta',
-            method: 'PATCH',
-            params: {
-                id: id,
-                delta: delta
-            }
-        }).then(function (response) {
-            $scope.loadProduct();
-        });
-    }
-
-    //============================================================
-    $scope.saveNewProductFun = function () {
-        console.log($scope.newProduct);
-        $http.post(contextPath + '/products', $scope.newProduct)
-            .then(function (response) {
-                $scope.loadProduct();
-            });
-    }
-
-    //============================================================
-    $scope.addToCart = function (id) {
-        $http.get('http://localhost:8189/app/api/v1/carts/add/' + id)
-            .then(function (response) {
-                $scope.loadCart();
-            });
-    }
-
-
-
 
     //============================================================
     $scope.tryToAuth = function () {
@@ -160,24 +88,9 @@ angular.module('market-front', ['ngStorage']).controller('indexController', func
 */
 
     //============================================================
-/*
-    $scope.createOrder = function (address, phone) {
-        $http.post('http://localhost:8189/app/api/v1/orders', $scope.newUser)
-            .then(function (response) {
-                console.log($scope.newUser);
-                // $scope.loadProduct();
-            });
-    }
-*/
 
 
 
-    $scope.loadOrders = function () {
-        $http.get('http://localhost:8189/app/api/v1/orders')
-            .then(function (response) {
-                $scope.MyOrders = response.data;
-            });
-    }
 
 
 
