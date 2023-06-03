@@ -4,6 +4,7 @@ package ru.rrenat358.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.rrenat358.dto.Cart;
+import ru.rrenat358.dto.OrderDetailsDto;
 import ru.rrenat358.dto.OrderDto;
 import ru.rrenat358.entities.Order;
 import ru.rrenat358.entities.User;
@@ -24,15 +25,15 @@ public class OrderService {
 
 
 
-    public void createOrder(User user, String address, String phone) {
+    public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
         Order order = new Order();
         Cart cart = cartService.getCurrentCart();
 //        List<OrderItemDto> itemList = cart.getItemList();
 
         order.setUser(user);
         order.setTotalPrice(cart.getTotalPrice());
-        order.setAddress(address);
-        order.setAddress(phone);
+        order.setAddress(orderDetailsDto.getAddress());
+        order.setPhone(orderDetailsDto.getPhone());
 
         orderRepository.save(order);
         cart.clear();

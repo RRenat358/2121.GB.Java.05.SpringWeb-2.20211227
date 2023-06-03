@@ -3,9 +3,11 @@ package ru.rrenat358.controllers;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.dto.Cart;
+import ru.rrenat358.dto.OrderDetailsDto;
 import ru.rrenat358.entities.User;
 import ru.rrenat358.services.OrderService;
 import ru.rrenat358.services.UserService;
@@ -24,12 +26,12 @@ public class OrderController {
 
 
     @GetMapping("/create")
-    public void createOrder(Principal principal, String address, String phone) {
+    public void createOrder(Principal principal, @RequestBody OrderDetailsDto orderDetailsDto) {
 
         User user = userService.findByUsername(principal.getName())
                 .orElseThrow(() -> new RuntimeException("noUser"));
 
-        orderService.createOrder(user, address, phone);
+        orderService.createOrder(user, orderDetailsDto);
     }
 
 
