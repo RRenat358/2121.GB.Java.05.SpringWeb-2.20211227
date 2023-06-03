@@ -182,10 +182,19 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
     }
 
 
+    $scope.loadOrders = function () {
+        $http.get('http://localhost:8189/app/api/v1/orders')
+            .then(function (response) {
+                $scope.MyOrders = response.data;
+            });
+    }
+
+
 
     //============================================================
 
 
     $scope.loadProduct();
     $scope.loadCart();
+    $scope.loadOrders();
 });

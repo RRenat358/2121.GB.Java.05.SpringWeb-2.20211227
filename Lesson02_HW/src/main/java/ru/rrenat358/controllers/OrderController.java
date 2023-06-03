@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping(name = "/api/v1/orders")
+@RequestMapping("/api/v1/orders")
 @Data
 @RequiredArgsConstructor
 public class OrderController {
