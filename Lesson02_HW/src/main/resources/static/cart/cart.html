@@ -33,7 +33,7 @@
         <!--        </td>-->
         </tbody>
     </table>
-    <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
+    <button class="btn btn-danger" ng-click="clearCart()">Очистить корзину</button>
     <br>
 
     <!--============================================================-->
@@ -46,6 +46,6 @@
         <p></p>
     </form>
 
-    <button class="btn btn-primary" ng-click="checkOut()" ng-show="isUserLoggedIn() && cart.items.length > 0">Оформить заказ</button>
-    <button class="btn btn-secondary" ng-click="disabledCheckOut()" ng-show="!isUserLoggedIn() && cart.items.length > 0">Оформить заказ</button>
+    <button class="btn btn-outline-success" ng-click="checkOut()" ng-show="isUserLoggedIn() && cart.itemList.length > 0">Оформить заказ</button>
+    <button class="btn btn-outline-secondary" ng-click="disabledCheckOut()" ng-show="!isUserLoggedIn() && cart.itemList.length > 0">Оформить заказ</button>
 </div>
