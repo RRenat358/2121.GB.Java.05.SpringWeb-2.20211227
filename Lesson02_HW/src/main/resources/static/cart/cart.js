@@ -1,9 +1,9 @@
 angular.module('market-front').controller('cartController', function ($scope, $http, $location, $localStorage) {
-    const contextPath = 'http://localhost:8189/app/';
+    const contextPath = 'http://localhost:8189/app';
 
     $scope.loadCart = function () {
         $http({
-            url: contextPath + 'api/v1/cart',
+            url: contextPath + '/api/v1/cart',
             method: 'GET'
         }).then(function (response) {
             $scope.cart = response.data;
@@ -12,7 +12,7 @@ angular.module('market-front').controller('cartController', function ($scope, $h
 
 /*
     $scope.loadCart = function () {
-        $http.get('http://localhost:8189/app/api/v1/carts')
+        $http.get('http://localhost:8189/app/api/v1/cart')
             .then(function (response) {
                 $scope.Cart = response.data;
             });
@@ -25,7 +25,7 @@ angular.module('market-front').controller('cartController', function ($scope, $h
     }
 
     $scope.clearCart = function () {
-        $http.get(contextPath + 'api/v1/cart/clear')
+        $http.get(contextPath + '/api/v1/cart/clear')
             .then(function (response) {
                 $scope.loadCart();
             });
@@ -33,7 +33,7 @@ angular.module('market-front').controller('cartController', function ($scope, $h
 
     $scope.checkOut = function () {
         $http({
-            url: contextPath + 'api/v1/orders',
+            url: contextPath + '/api/v1/orders',
             method: 'POST',
             data: $scope.orderDetails
         }).then(function (response) {
