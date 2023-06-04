@@ -25,13 +25,16 @@
 
                 <!--============================================================-->
                 <li class="nav-item">
-                    <a class="nav-link" href="#!/">Spring Web Application</a>
+                    <a class="navbar-brand" href="#!/">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!/store">Каталог товаров</a>
+                    <a class="navbar-brand" href="#!/store">Каталог товаров</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!/cart">Корзина</a>
+                    <a class="navbar-brand" href="#!/cart">Корзина</a>
+                </li>
+                <li class="nav-item" ng-show="isUserLoggedIn()">
+                    <a class="navbar-brand" href="#!/orders">Мои заказы</a>
                 </li>
 
                 <!--============================================================-->
@@ -51,13 +54,21 @@
                     </form>
                 </li>
 
+                <li class="nav-item" ng-show="isUserLoggedIn()" style="padding: 4px;">
+                    <button class="btn btn-outline-danger  btn-sm" ng-click="tryToLogout()">Выйти</button>
+                </li>
+
                 <li class="nav-item" style="padding: 4px;">
                     <button class="btn btn-outline-secondary btn-sm" ng-click="showCurrentUserInfo()">Обо мне</button>
                 </li>
 
-                <li class="nav-item" ng-show="isUserLoggedIn()" style="padding: 4px;">
-                    <button class="btn btn-outline-danger  btn-sm" ng-click="tryToLogout()">Выйти</button>
+                <li class="nav-item" ng-show="!isUserLoggedIn()" style="padding: 4px;">
+                    <span class="p-3 mb-2 bg-secondary text-white">≡</span>
                 </li>
+                <li class="nav-item" ng-show="isUserLoggedIn()" style="padding: 4px;">
+                    <span class="p-3 mb-2 bg-success text-white">≡</span>
+                </li>
+
 
             </ul>
         </div>
@@ -83,9 +94,10 @@
     <ng-view></ng-view>
 
     <script src="index.js"></script>
+    <script src="welcome/welcome.js"></script>
     <script src="store/store.js"></script>
     <script src="cart/cart.js"></script>
-    <script src="welcome/welcome.js"></script>
+    <script src="orders/orders.js"></script>
 
     <!--============================================================-->
     <!-- //end container-->
