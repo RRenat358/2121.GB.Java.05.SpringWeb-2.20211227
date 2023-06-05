@@ -28,17 +28,18 @@ public class OrderService {
     @Transactional
     public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
         Order order = new Order();
-        Cart cart = cartService.getCurrentCart();
+        String cartKey = cartService.getCartUuidFromSuffix(user.getUsername());
+        Cart currentCart = cartService.getCurrentCart(cartKey);
 
         order.setUser(user);
-        order.setTotalPrice(cart.getTotalPrice());
+        order.setTotalPrice(currentCart.getTotalPrice());
         order.setAddress(orderDetailsDto.getAddress());
         order.setPhone(orderDetailsDto.getPhone());
 
-//        List<OrderItemDto> itemList = cart.getItemList()
+//        List<OrderItemDto> itemList = currentCart.getItemList()
 //                        .stream().toList();
 
-        List<OrderItem> itemList = cart.getItemList().stream()
+        List<OrderItem> itemList = currentCart.getItemList().stream()
                 .map(orderItemDto -> {
                     OrderItem orderItem = new OrderItem();
                     orderItem.setOrder(order);
@@ -52,7 +53,7 @@ public class OrderService {
 
         order.setItems(itemList);
         orderRepository.save(order);
-        cart.clear();
+        currentCart.clear();
     }
 
     public List<Order> getAllOrdersByCurrentUser(String userName) {

@@ -87,7 +87,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
 
     //============================================================
     $scope.addToCart = function (id) {
-        $http.get(contextPath + '/api/v1/cart/add/' + id)
+        $http.get(contextPath + '/api/v1/cart/' + $localStorage.springWebGuestCartId + '/add/' + id)
             .then(function (response) {
             });
     }

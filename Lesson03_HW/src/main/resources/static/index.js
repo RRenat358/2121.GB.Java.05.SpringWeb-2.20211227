@@ -32,7 +32,17 @@
         if ($localStorage.springWebUser) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.springWebUser.token;
         }
+
+        if (!$localStorage.springWebGuestCartId) {
+            $http.get('http://localhost:8189/app/api/v1/cart/generate')
+                .then(function successCallback(response) {
+                    $localStorage.springWebGuestCartId = response.data.value;
+                });
+        }
     }
+
+
+
 })();
 
 
