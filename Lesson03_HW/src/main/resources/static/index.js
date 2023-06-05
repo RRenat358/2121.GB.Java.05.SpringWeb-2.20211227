@@ -64,6 +64,10 @@ angular.module('market-front').controller('indexController', function ($scope, $
                     $scope.user.username = null;
                     $scope.user.password = null;
 
+                    $http.get('http://localhost:8189/app/api/v1/cart/' + $localStorage.springWebGuestCartId + '/merge')
+                        .then(function successCallback(response) {
+                        });
+
                     $location.path('/');
                 }
             }, function errorCallback(response) {
