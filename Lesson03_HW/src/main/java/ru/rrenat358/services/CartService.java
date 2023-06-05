@@ -41,7 +41,7 @@ public class CartService {
     public void addToCart(String cartKey, Long productId) {
         Product product = productsService.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Невозможно добавить продукт в корзину. Продукт не найдет, id: " + productId));
         execute(cartKey, c -> {
-            c.add(product);
+            c.addProduct(product);
         });
     }
 
@@ -50,11 +50,11 @@ public class CartService {
     }
 
     public void removeItemFromCart(String cartKey, Long productId) {
-        execute(cartKey, c -> c.remove(productId));
+        execute(cartKey, c -> c.removeProduct(productId));
     }
 
     public void decrementItem(String cartKey, Long productId) {
-        execute(cartKey, c -> c.decrement(productId));
+        execute(cartKey, c -> c.decrementProduct(productId));
     }
 
     public void merge(String userCartKey, String guestCartKey) {
@@ -79,22 +79,10 @@ public class CartService {
 
 
 
+    //============================================================
+    // OLD
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
     @PostConstruct
     public void init() {
         cart = new Cart();
@@ -116,11 +104,10 @@ public class CartService {
     public void clear() {
         getCurrentCart().clear();
     }
+*/
 
 
-
-
-
+    //============================================================
 
 
 }
