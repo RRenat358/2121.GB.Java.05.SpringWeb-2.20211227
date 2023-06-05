@@ -53,7 +53,7 @@ public class OrderService {
 
         order.setItems(itemList);
         orderRepository.save(order);
-        currentCart.clear();
+        cartService.clearCart(cartKey);
     }
 
     public List<Order> getAllOrdersByCurrentUser(String userName) {
