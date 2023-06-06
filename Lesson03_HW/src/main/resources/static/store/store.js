@@ -9,6 +9,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
             url: contextPath + '/api/v1/products',
             method: 'GET',
             params: {
+                p: pageIndex,
                 namePart: $scope.filter ? $scope.filter.namePart : null,
                 minPrice: $scope.filter ? $scope.filter.minPrice : null,
                 maxPrice: $scope.filter ? $scope.filter.maxPrice : null
@@ -16,9 +17,17 @@ angular.module('market-front').controller('storeController', function ($scope, $
         }).then(function (response) {
             // console.log(response.data);
             $scope.ProductList = response.data;
+            $scope.paginationArray = $scope.generatePagesIndexes(1, $scope.ProductList.totalPages);
         });
     }
 
+    $scope.generatePagesIndexes = function (startPage, endPage) {
+        let arr = [];
+        for (let i = startPage; i < endPage + 1; i++) {
+            arr.push(i);
+        }
+        return arr;
+    }
 
     // $scope.loadProducts = function (pageIndex = 1) {
     //     $http({
