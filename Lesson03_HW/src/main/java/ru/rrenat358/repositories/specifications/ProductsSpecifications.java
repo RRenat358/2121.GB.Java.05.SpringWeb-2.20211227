@@ -17,4 +17,8 @@ public class ProductsSpecifications {
         return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.lessThanOrEqualTo(root.get("price"), price);
     }
 
+    public static Specification<Product> groupLike(String groupPart) {
+        return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("groupProduct"), String.format("%%%s%%", groupPart));
+    }
+
 }

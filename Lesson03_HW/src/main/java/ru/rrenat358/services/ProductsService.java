@@ -27,7 +27,8 @@ public class ProductsService {
     public Page<Product> findByFilter(
             Integer page,
             String namePart,
-            Integer minPrice, Integer maxPrice
+            Integer minPrice, Integer maxPrice,
+            String groupPart
     ) {
         PageRequest pageRequest = PageRequest.of(page - 1, 5);
         Specification<Product> spec = Specification.where(null);
@@ -41,6 +42,10 @@ public class ProductsService {
         if (maxPrice != null) {
             spec = spec.and(ProductsSpecifications.priceLessThanOrEqualsThan(maxPrice));
         }
+        if (groupPart != null) {
+            spec = spec.and(ProductsSpecifications.groupLike(groupPart));
+        }
+
 //        log.info("--- findByFilter -------------------");
         return productsRepository.findAll(spec, pageRequest);
     }
