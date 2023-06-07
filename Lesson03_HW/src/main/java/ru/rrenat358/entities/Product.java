@@ -43,6 +43,7 @@ public class Product {
     @Column(name = "calories")
     String calories;
 
+    //todo хранить в БД  со @OneToMany/@ManyToOne
     @Column(name = "group_product")
     String groupProduct;
 
