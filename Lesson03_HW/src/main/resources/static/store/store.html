@@ -55,7 +55,8 @@
                     <td>Товар</td>
                     <td>Цена</td>
                     <!--            <td>Изменить цену</td>-->
-                    <td>Действие</td>
+                    <td>Удалить из БД</td>
+                    <td>В корзину</td>
                 </tr>
                 <tbody>
                 <tr ng-repeat="p in ProductList.content">
@@ -68,7 +69,7 @@
                     <!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>-->
                     <!--            </td>-->
                     <td>
-                        <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
+                        <button class="btn btn-danger" ng-click="deleteProduct(p.id)">[Х]</button>
                     </td>
                     <td>
                         <button class="btn btn-outline-success" ng-click="addToCart(p.id)">toCart</button>
