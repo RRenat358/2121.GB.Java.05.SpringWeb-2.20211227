@@ -25,16 +25,18 @@
 
                 <!--============================================================-->
                 <li class="nav-item">
-                    <a class="navbar-brand" href="#!/">Главная</a>
+                    <a class="navbar-brand" href="#!/"><strong><big> ⌂ </big></strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="#!/store">Каталог товаров</a>
+                    <span class="navbar-toggler-icon"></span>
+                    <a class="navbar-brand" href="#!/store">Каталог</a>
+
                 </li>
                 <li class="nav-item">
-                    <a class="navbar-brand" href="#!/cart">Корзина</a>
+                    <a class="navbar-brand" href="#!/cart">🛒Корзина</a>
                 </li>
                 <li class="nav-item" ng-show="isUserLoggedIn()">
-                    <a class="navbar-brand" href="#!/orders">Мои заказы</a>
+                    <a class="navbar-brand" href="#!/orders">📦Заказы</a>
                 </li>
 
                 <!--============================================================-->
@@ -58,16 +60,17 @@
                     <button class="btn btn-outline-danger  btn-sm" ng-click="tryToLogout()">Выйти</button>
                 </li>
 
-                <li class="nav-item" style="padding: 4px;">
-                    <button class="btn btn-outline-secondary btn-sm" ng-click="showCurrentUserInfo()">Обо мне</button>
-                </li>
 
-                <li class="nav-item" ng-show="!isUserLoggedIn()" style="padding: 4px;">
-                    <span class="p-3 mb-2 bg-secondary text-white">≡</span>
+                <!--============================================================-->
+                <li class="nav-item" ng-show="!isUserLoggedIn()" style="padding: 4px;" ng-click="showCurrentUserInfo()">
+                    <span class="p-3 mb-2 bg-secondary text-white">👤</span>
                 </li>
-                <li class="nav-item" ng-show="isUserLoggedIn()" style="padding: 4px;">
-                    <span class="p-3 mb-2 bg-success text-white">≡</span>
+                <li class="nav-item" ng-show="isUserLoggedIn()" style="padding: 4px;" ng-click="showCurrentUserInfo()">
+                    <span class="p-3 mb-2 bg-success text-white">👨‍🌾</span>
                 </li>
+<!--                <li class="nav-item" style="padding: 4px;">-->
+<!--                    <button class="btn btn-outline-secondary btn-sm" ng-click="showCurrentUserInfo()">Обо мне</button>-->
+<!--                </li>-->
 
 
             </ul>

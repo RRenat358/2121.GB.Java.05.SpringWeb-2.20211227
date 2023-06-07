@@ -39,7 +39,7 @@ public class Cart {
     }
 
 
-    public void decreaseProduct(Long id) {
+    public void decrementProduct(Long id) {
         Iterator<OrderItemDto> iter = itemList.iterator();
         while (iter.hasNext()) {
             OrderItemDto orderItemDto = iter.next();
@@ -59,6 +59,26 @@ public class Cart {
         itemList.removeIf(orderItemDto -> orderItemDto.getProductId().equals(id));
         recalculate();
     }
+
+
+    public void merge(Cart another) {
+        for (OrderItemDto anotherItem : another.itemList) {
+            boolean merged = false;
+            for (OrderItemDto myItem : itemList) {
+                if (myItem.getProductId().equals(anotherItem.getProductId())) {
+                    myItem.changeQuantity(anotherItem.getQuantity());
+                    merged = true;
+                    break;
+                }
+            }
+            if (!merged) {
+                itemList.add(anotherItem);
+            }
+        }
+        recalculate();
+        another.clear();
+    }
+
 
 
     private void recalculate() {
