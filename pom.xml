@@ -26,7 +26,10 @@
         <module>Lesson03-Redis</module>
         <module>Lesson03_HW</module>
 
-<!--        <module>Lesson04-Web</module>-->
+<!--        <module>Lesson04-01-AOP</module>-->
+<!--        <module>Lesson04-02-WebSocket</module>-->
+
+
 <!--        <module>Lesson04_HW</module>-->
 
 <!--        <module>Lesson05-Cloud1</module>-->
