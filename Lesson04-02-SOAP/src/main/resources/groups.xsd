@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.flamexander.com/spring/ws/groups"
+        xmlns:st="http://www.flamexander.com/spring/ws/students"
+        targetNamespace="http://www.flamexander.com/spring/ws/groups" elementFormDefault="qualified">
+
+    <xs:import schemaLocation="students.xsd" namespace="http://www.flamexander.com/spring/ws/students"/>
+
+    <xs:element name="getGroupByTitleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getGroupByTitleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="group" type="tns:group"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="group">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="students" maxOccurs="unbounded" type="st:student"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
