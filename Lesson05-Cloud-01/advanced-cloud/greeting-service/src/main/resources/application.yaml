@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: greeting-service
+logging:
+  level:
+    root: INFO
+server:
+  port: 51586
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      fetchRegistry: false
