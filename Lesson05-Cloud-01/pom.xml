@@ -9,9 +9,15 @@
         <relativePath/>
     </parent>
 
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
+<!--    <packaging>war</packaging>-->
 
     <artifactId>Lesson05-Cloud-01</artifactId>
+
+
+    <modules>
+        <module>advanced-cloud</module>
+    </modules>
 
         <properties>
             <java.version>17</java.version>
