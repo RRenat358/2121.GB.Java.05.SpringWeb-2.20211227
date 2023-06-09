@@ -22,8 +22,15 @@ public class ProductController {
         return productService.findAll().stream().map(mapper).collect(Collectors.toList());
     }
 
+/*
     @GetMapping("/{id}")
     public ProductDto findById(@PathVariable Long id) {
         return mapper.apply(productService.findById(id).get());
+    }
+*/
+
+    @GetMapping("/{id}")
+    public String findById(@PathVariable Long id) {
+        return "product"+id;
     }
 }

@@ -10,4 +10,8 @@ public class FrontApp {
     public static void main(String[] args) {
         SpringApplication.run(FrontApp.class, args);
     }
+
+
+
+
 }
