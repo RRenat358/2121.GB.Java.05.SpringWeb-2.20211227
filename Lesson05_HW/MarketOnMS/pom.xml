@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <packaging>pom</packaging>
 
     <modules>
@@ -10,11 +11,11 @@
 
 <!--        <module>discovery-service</module>-->
 
-<!--        <module>front-service</module>-->
+        <module>front-service</module>
 
 <!--        <module>gateway-service</module>-->
 <!--        <module>greeting-service</module>-->
-<!--        <module>product-service</module>-->
+        <module>product-service</module>
 <!--        <module>slow-service</module>-->
     </modules>
 
@@ -26,8 +27,8 @@
     </parent>
 
     <groupId>com.flamexander</groupId>
-    <artifactId>advanced-cloud-HW</artifactId>
-    <name>advanced-cloud-HW</name>
+    <artifactId>MarketOnMS</artifactId>
+    <name>MarketOnMS</name>
     <version>0.0.1-SNAPSHOT</version>
     <description>Demo project for Spring Boot</description>
 
