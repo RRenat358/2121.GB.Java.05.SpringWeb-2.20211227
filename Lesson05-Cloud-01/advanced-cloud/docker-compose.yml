@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+    - "9411:9411"
+
+  postgres:
+    image: postgres:9.6
+    domainname: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-U", "postgres"]
+      interval: 5s
+      timeout: 1s
+      retries: 2
+
+  postgres-oauth:
+    image: postgres:9.6
+    domainname: postgres-oauth
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=keycloak
+
+  flyway:
+    image: boxfuse/flyway
+    command: -url=jdbc:postgresql://postgres:5432/postgres -schemas=public -user=postgres -password=postgres -connectRetries=60 migrate
+    volumes:
+      - ./flyway:/flyway/sql
+    depends_on:
+      - postgres
+
+  keycloak:
+    image: jboss/keycloak:12.0.2
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres-oauth:5432
+      DB_USER: keycloak
+      DB_PASSWORD: keycloak
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 8888:8080
+    depends_on:
+      - postgres-oauth

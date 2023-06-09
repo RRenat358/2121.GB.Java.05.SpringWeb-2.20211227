@@ -1,0 +1,63 @@
+app:
+  config:
+    keycloak:
+      url: http://localhost:8888/auth
+      realm: cloud
+
+server:
+  port: 5555
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      fetchRegistry: true
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: greeting-service
+          uri: lb://greeting-service
+          predicates:
+            - Path=/greetings/**
+          filters:
+            - StripPrefix=1
+
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/product-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: auth-service
+          uri: localhost:8888/auth
+          predicates:
+            - Path=/auth/**
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/token
+            authorization-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/auth
+            user-name-attribute: preferred_username
+            user-info-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
+            user-info-authentication-method: header
+        registration:
+          internet-banking-core-client:
+            provider: keycloak
+            client-id: cloudapp
+            client-secret: 447f6abb-1dae-4942-a865-9b83138f6445
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8888/login/oauth2/code/keycloak
+            scope: openid
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${app.config.keycloak.url}/realms/${app.config.keycloak.realm}/protocol/openid-connect/certs
