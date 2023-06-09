@@ -13,9 +13,9 @@
 <!--        <module>front-service</module>-->
 
 <!--        <module>gateway-service</module>-->
-<!--        <module>greeting-service</module>-->
+        <module>greeting-service</module>
 <!--        <module>product-service</module>-->
-<!--        <module>slow-service</module>-->
+        <module>slow-service</module>
     </modules>
 
     <parent>
@@ -27,8 +27,8 @@
 
     <groupId>com.flamexander</groupId>
     <artifactId>advanced-cloud-HW</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>advanced-cloud-HW</name>
+    <version>0.0.1-SNAPSHOT</version>
     <description>Demo project for Spring Boot</description>
 
     <properties>
