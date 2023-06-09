@@ -17,6 +17,7 @@
 
     <modules>
         <module>advanced-cloud-HW</module>
+        <module>MarketOnMS</module>
     </modules>
 
         <properties>
