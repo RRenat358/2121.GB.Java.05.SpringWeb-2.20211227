@@ -18,13 +18,13 @@
     <!--	<description>First Spring Web Project</description>-->
     <version>0.0.1-SNAPSHOT</version>
 
-<!--    <modules>-->
-<!--        <module>core-service</module>-->
-<!--        <module>front-service</module>-->
-<!--        <module>gateway</module>-->
-<!--        <module>auth-service</module>-->
-<!--        <module>api</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>api</module>
+        <module>auth-service</module>
+        <!--        <module>core-service</module>-->
+        <!--        <module>front-service</module>-->
+        <!--        <module>gateway</module>-->
+    </modules>
 
     <properties>
         <java.version>11</java.version>
