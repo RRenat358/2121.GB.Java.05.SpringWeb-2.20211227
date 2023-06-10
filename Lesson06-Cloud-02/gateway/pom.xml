@@ -11,7 +11,9 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.geekbrains.web</groupId>
+<!--    <groupId>com.geekbrains.web</groupId>-->
+    <groupId>ru.rrenat358</groupId>
+
     <artifactId>gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>

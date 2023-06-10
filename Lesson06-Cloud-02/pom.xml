@@ -14,7 +14,8 @@
 
 <!--    todo переименовать == ru.rrenat358 -->
 <!--      здесь и в других *pom -->
-    <groupId>com.geekbrains</groupId>
+<!--    <groupId>com.geekbrains</groupId>-->
+    <groupId>ru.rrenat358</groupId>
     <artifactId>Lesson06-Cloud-02</artifactId>
 <!--    <name>spring-web</name>-->
 <!--    <name>Lesson06-Cloud-02</name>-->
