@@ -12,11 +12,13 @@
         <relativePath/>
     </parent>
 
+<!--    todo переименовать == ru.rrenat358 -->
+<!--      здесь и в других *pom -->
     <groupId>com.geekbrains</groupId>
     <artifactId>Lesson06-Cloud-02</artifactId>
-    <name>spring-web</name>
-    <!--	<name>Lesson06-Cloud-02</name>-->
-    <!--	<description>First Spring Web Project</description>-->
+<!--    <name>spring-web</name>-->
+<!--    <name>Lesson06-Cloud-02</name>-->
+    	<description>First Spring Web Project</description>
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
