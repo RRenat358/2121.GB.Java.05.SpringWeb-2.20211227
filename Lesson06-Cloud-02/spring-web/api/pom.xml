@@ -4,9 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-<!--    <groupId>com.geekbrains&lt;!&ndash;.web&ndash;&gt;</groupId> &lt;!&ndash; .web == ?? &ndash;&gt;-->
-    <groupId>ru.rrenat358</groupId>
-
+    <groupId>com.geekbrains.web</groupId>
     <artifactId>api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
