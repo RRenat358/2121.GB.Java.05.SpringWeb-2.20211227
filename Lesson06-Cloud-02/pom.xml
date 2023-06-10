@@ -14,6 +14,7 @@
 
     <groupId>com.geekbrains</groupId>
     <artifactId>Lesson06-Cloud-02</artifactId>
+    <name>spring-web</name>
     <!--	<name>Lesson06-Cloud-02</name>-->
     <!--	<description>First Spring Web Project</description>-->
     <version>0.0.1-SNAPSHOT</version>
@@ -21,9 +22,9 @@
     <modules>
         <module>api</module>
         <module>auth-service</module>
-        <!--        <module>core-service</module>-->
-        <!--        <module>front-service</module>-->
-        <!--        <module>gateway</module>-->
+        <module>core-service</module>
+        <module>front-service</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
