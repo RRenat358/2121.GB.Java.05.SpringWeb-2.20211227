@@ -6,13 +6,8 @@
 
     <artifactId>Lesson06_HW</artifactId>
 
-        <modules>
-            <module>spring-web</module>
-        </modules>
-
-    <properties>
-        <java.version>17</java.version>
-    </properties>
-
+    <modules>
+        <module>spring-web</module>
+    </modules>
 
 </project>

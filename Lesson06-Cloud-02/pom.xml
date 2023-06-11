@@ -22,9 +22,9 @@
 
     <artifactId>Lesson06-Cloud-02</artifactId>
 
-    <modules>
-        <module>spring-web</module>
-    </modules>
+<!--    <modules>-->
+<!--        <module>spring-web</module>-->
+<!--    </modules>-->
 
         <properties>
             <java.version>17</java.version>
