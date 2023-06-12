@@ -1,7 +1,8 @@
 package com.geekbrains.spring.web.core.services;
 
 import com.geekbrains.spring.web.api.exceptions.ResourceNotFoundException;
-import com.geekbrains.spring.web.core.dto.Cart;
+import com.geekbrains.spring.web.cart.services.CartService;
+import com.geekbrains.spring.web.cart.dto.Cart;
 import com.geekbrains.spring.web.core.dto.OrderDetailsDto;
 import com.geekbrains.spring.web.core.entities.Order;
 import com.geekbrains.spring.web.core.entities.OrderItem;
