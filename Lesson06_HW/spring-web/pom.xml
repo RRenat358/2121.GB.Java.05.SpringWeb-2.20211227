@@ -6,6 +6,7 @@
 
     <modules>
         <module>core-service</module>
+        <module>cart-service</module>
         <module>front-service</module>
 		<module>gateway</module>
         <module>auth-service</module>
