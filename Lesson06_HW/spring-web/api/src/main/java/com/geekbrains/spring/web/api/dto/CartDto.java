@@ -1,3 +1,4 @@
+/*
 package com.geekbrains.spring.web.api.dto;
 
 import com.geekbrains.spring.web.core.dto.OrderItemDto;
@@ -86,3 +87,4 @@ public class CartDto {
         another.clear();
     }
 }
+*/
