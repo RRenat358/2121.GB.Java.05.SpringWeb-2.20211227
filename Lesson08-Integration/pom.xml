@@ -6,9 +6,9 @@
 
     <artifactId>Lesson08-Integration</artifactId>
 
-<!--    <modules>-->
-<!--        <module>spring-web</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>spring-web</module>
+    </modules>
 
 
 </project>
