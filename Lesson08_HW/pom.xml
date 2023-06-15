@@ -6,9 +6,9 @@
 
     <artifactId>Lesson08_HW</artifactId>
 
-    <modules>
-        <module>ReMarket-02-08</module>
-    </modules>
+<!--    <modules>-->
+<!--        <module>ReMarket-02-08</module>-->
+<!--    </modules>-->
 
 
 </project>
