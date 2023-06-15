@@ -8,7 +8,6 @@ import ru.rrenat358.dto.Cart;
 import ru.rrenat358.entities.Product;
 import ru.rrenat358.exceptions.ResourceNotFoundException;
 
-import javax.annotation.PostConstruct;
 import java.util.UUID;
 import java.util.function.Consumer;
 

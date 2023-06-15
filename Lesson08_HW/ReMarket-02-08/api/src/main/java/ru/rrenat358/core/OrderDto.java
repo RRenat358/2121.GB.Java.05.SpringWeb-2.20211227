@@ -1,4 +1,4 @@
-package ru.rrenat358.dto;
+package ru.rrenat358.core;
 
 
 import lombok.AllArgsConstructor;

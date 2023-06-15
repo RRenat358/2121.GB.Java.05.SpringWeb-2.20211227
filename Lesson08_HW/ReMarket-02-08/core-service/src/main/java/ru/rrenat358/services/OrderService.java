@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.rrenat358.dto.Cart;
-import ru.rrenat358.dto.OrderDetailsDto;
+import ru.rrenat358.core.OrderDetailsDto;
 import ru.rrenat358.entities.Order;
 import ru.rrenat358.entities.OrderItem;
 import ru.rrenat358.entities.User;

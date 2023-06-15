@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import ru.rrenat358.converters.ProductConverter;
-import ru.rrenat358.dto.ProductDto;
+import ru.rrenat358.core.ProductDto;
 import ru.rrenat358.entities.Product;
 import ru.rrenat358.exceptions.ResourceNotFoundException;
 import ru.rrenat358.services.ProductsService;

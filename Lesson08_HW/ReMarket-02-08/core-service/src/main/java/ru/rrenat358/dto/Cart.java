@@ -1,6 +1,7 @@
 package ru.rrenat358.dto;
 
 import lombok.Data;
+import ru.rrenat358.core.OrderItemDto;
 import ru.rrenat358.entities.Product;
 
 import java.util.ArrayList;
