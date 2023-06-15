@@ -11,12 +11,13 @@
         <relativePath/>
     </parent>
 
-    <groupId>ru.rrenat358</groupId>
     <artifactId>ReMarket-02-08</artifactId>
+    <groupId>ru.rrenat358</groupId>
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
         <module>api</module>
+        <module>cart-service</module>
         <module>core-service</module>
     </modules>
 
