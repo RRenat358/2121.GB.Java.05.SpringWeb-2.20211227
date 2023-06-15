@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.exceptions;
+package ru.rrenat358.core.exceptions;
 
 
 import lombok.Data;

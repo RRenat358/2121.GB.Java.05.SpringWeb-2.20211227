@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.services;
+package ru.rrenat358.core.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

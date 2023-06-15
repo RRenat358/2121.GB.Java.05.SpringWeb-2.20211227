@@ -1,16 +1,16 @@
-package ru.rrenat358.core.cart.controllers;
+package ru.rrenat358.core.controllers;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.rrenat358.core.cart.converters.OrderConverter;
+import ru.rrenat358.core.converters.OrderConverter;
 import ru.rrenat358.core.OrderDetailsDto;
 import ru.rrenat358.core.OrderDto;
 import ru.rrenat358.core.entities.Order;
 import ru.rrenat358.core.entities.User;
-import ru.rrenat358.core.cart.services.OrderService;
-import ru.rrenat358.core.cart.services.UserService;
+import ru.rrenat358.core.services.OrderService;
+import ru.rrenat358.core.services.UserService;
 
 import java.security.Principal;
 import java.util.List;

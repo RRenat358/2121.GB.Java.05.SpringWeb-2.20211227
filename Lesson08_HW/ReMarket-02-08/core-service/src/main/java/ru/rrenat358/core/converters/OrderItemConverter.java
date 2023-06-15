@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.converters;
+package ru.rrenat358.core.converters;
 
 import org.springframework.stereotype.Component;
 import ru.rrenat358.core.OrderItemDto;

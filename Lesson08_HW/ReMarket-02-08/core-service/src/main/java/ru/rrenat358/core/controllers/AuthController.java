@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.controllers;
+package ru.rrenat358.core.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.core.dto.JwtRequest;
 import ru.rrenat358.core.dto.JwtResponse;
 import ru.rrenat358.core.cart.exceptions.AppError;
-import ru.rrenat358.core.cart.services.UserService;
+import ru.rrenat358.core.services.UserService;
 import ru.rrenat358.core.utils.JwtTokenUtil;
 
 @RestController

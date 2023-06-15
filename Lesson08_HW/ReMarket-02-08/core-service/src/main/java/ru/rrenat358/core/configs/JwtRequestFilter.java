@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.configs;
+package ru.rrenat358.core.configs;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;

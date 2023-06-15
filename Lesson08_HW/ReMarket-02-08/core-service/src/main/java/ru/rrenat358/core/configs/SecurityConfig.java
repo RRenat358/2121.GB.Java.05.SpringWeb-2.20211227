@@ -1,4 +1,4 @@
-package ru.rrenat358.core.cart.configs;
+package ru.rrenat358.core.configs;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
