@@ -4,10 +4,10 @@
 
     <packaging>pom</packaging>
 
-    <artifactId>Lesson08-Integration</artifactId>
+    <artifactId>Lesson08_HW</artifactId>
 
     <modules>
-        <module>spring-web</module>
+        <module>ReMarket-02-08</module>
     </modules>
 
 
