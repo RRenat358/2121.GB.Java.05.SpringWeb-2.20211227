@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.rrenat358.api.core.ProfileDto;
 import ru.rrenat358.auth.entites.Role;
 import ru.rrenat358.auth.entites.User;
 import ru.rrenat358.auth.repositories.UserRepository;
@@ -37,6 +36,7 @@ public class UserService implements UserDetailsService {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 
+/*
     //??
     public Optional<User> findAllByUsername(String username) {
         return userRepository.findAllByUsername(username);
@@ -50,6 +50,7 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
 //        return userRepository.save(user1);
     }
+*/
 
 
 }
