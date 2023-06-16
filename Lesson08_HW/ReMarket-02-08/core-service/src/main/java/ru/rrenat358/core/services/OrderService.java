@@ -4,11 +4,9 @@ package ru.rrenat358.core.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.rrenat358.core.dto.Cart;
-import ru.rrenat358.core.OrderDetailsDto;
+import ru.rrenat358.api.core.OrderDetailsDto;
 import ru.rrenat358.core.entities.Order;
 import ru.rrenat358.core.entities.OrderItem;
-import ru.rrenat358.core.entities.User;
 import ru.rrenat358.core.repositories.OrderRepository;
 
 import java.util.List;

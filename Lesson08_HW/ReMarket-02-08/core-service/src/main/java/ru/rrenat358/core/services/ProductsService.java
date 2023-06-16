@@ -6,9 +6,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import ru.rrenat358.core.ProductDto;
+import ru.rrenat358.api.core.ProductDto;
+import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.entities.Product;
-import ru.rrenat358.core.cart.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.repositories.ProductsRepository;
 import ru.rrenat358.core.repositories.specifications.ProductsSpecifications;
 

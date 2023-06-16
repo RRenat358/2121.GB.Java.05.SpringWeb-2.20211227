@@ -2,7 +2,7 @@ package ru.rrenat358.core.converters;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import ru.rrenat358.core.OrderDto;
+import ru.rrenat358.api.core.OrderDto;
 import ru.rrenat358.core.entities.Order;
 
 import java.util.stream.Collectors;

@@ -4,13 +4,11 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.api.core.OrderDetailsDto;
+import ru.rrenat358.api.core.OrderDto;
 import ru.rrenat358.core.converters.OrderConverter;
-import ru.rrenat358.core.OrderDetailsDto;
-import ru.rrenat358.core.OrderDto;
 import ru.rrenat358.core.entities.Order;
-import ru.rrenat358.core.entities.User;
 import ru.rrenat358.core.services.OrderService;
-import ru.rrenat358.core.services.UserService;
 
 import java.security.Principal;
 import java.util.List;

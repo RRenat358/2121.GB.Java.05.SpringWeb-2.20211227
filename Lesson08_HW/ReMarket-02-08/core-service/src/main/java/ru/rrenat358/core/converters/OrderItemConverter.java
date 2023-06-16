@@ -1,7 +1,7 @@
 package ru.rrenat358.core.converters;
 
 import org.springframework.stereotype.Component;
-import ru.rrenat358.core.OrderItemDto;
+import ru.rrenat358.api.core.OrderItemDto;
 import ru.rrenat358.core.entities.OrderItem;
 
 @Component

@@ -3,10 +3,10 @@ package ru.rrenat358.core.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.api.core.ProductDto;
+import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.converters.ProductConverter;
-import ru.rrenat358.core.ProductDto;
 import ru.rrenat358.core.entities.Product;
-import ru.rrenat358.core.cart.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.services.ProductsService;
 import ru.rrenat358.core.validators.ProductValidator;
 
