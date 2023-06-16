@@ -1,4 +1,4 @@
-package ru.rrenat358.core.configs;
+package ru.rrenat358.auth.configs;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package ru.rrenat358.core.utils;
+package ru.rrenat358.auth.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

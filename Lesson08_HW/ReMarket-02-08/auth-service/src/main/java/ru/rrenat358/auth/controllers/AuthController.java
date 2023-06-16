@@ -1,4 +1,4 @@
-package ru.rrenat358.core.controllers;
+package ru.rrenat358.auth.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

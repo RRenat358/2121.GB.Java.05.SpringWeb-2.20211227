@@ -1,4 +1,4 @@
-package ru.rrenat358.core.services;
+package ru.rrenat358.auth.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

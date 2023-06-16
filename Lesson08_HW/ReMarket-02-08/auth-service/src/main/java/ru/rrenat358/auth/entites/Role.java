@@ -1,4 +1,4 @@
-package ru.rrenat358.core.entities;
+package ru.rrenat358.auth.entites;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,4 +1,4 @@
-package ru.rrenat358.core.dto;
+package ru.rrenat358.auth.dto;
 
 import lombok.Data;
 
