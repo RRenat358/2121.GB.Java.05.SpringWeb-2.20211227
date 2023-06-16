@@ -6,8 +6,8 @@ auth-service
 - configs/JwtRequestFilter.class = нужен ли???
 
 
-
-
+front-service
+/static
 
 
 
