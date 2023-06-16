@@ -10,11 +10,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.rrenat358.core.dto.JwtRequest;
-import ru.rrenat358.core.dto.JwtResponse;
-import ru.rrenat358.core.cart.exceptions.AppError;
-import ru.rrenat358.core.services.UserService;
-import ru.rrenat358.core.utils.JwtTokenUtil;
+import ru.rrenat358.api.exceptions.AppError;
+import ru.rrenat358.auth.dto.JwtRequest;
+import ru.rrenat358.auth.dto.JwtResponse;
+import ru.rrenat358.auth.services.UserService;
+import ru.rrenat358.auth.utils.JwtTokenUtil;
+
 
 @RestController
 @RequiredArgsConstructor
