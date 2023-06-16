@@ -1,7 +1,7 @@
 package ru.rrenat358.core.validators;
 
 import ru.rrenat358.core.dto.ProductDto;
-import ru.rrenat358.core.cart.exceptions.ValidationException;
+import ru.rrenat358.cart.exceptions.ValidationException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -19,6 +19,7 @@ auth-service
 
 api-service
 auth-service
+cart-service
 gateway-service
 
 

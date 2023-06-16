@@ -4,7 +4,7 @@ package ru.rrenat358.Basket;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import ru.rrenat358.core.cart.converters.ProductConverter;
+import ru.rrenat358.cart.converters.ProductConverter;
 import ru.rrenat358.core.entities.Product;
 
 import javax.annotation.PostConstruct;

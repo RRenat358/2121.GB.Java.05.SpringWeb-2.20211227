@@ -1,6 +1,6 @@
 package ru.rrenat358.endpoints;
 
-import ru.rrenat358.core.cart.services.StudentService;
+import ru.rrenat358.cart.services.StudentService;
 import ru.rrenat358.soap.students.GetAllStudentsRequest;
 import ru.rrenat358.soap.students.GetAllStudentsResponse;
 import ru.rrenat358.soap.students.GetStudentByNameRequest;
