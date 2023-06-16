@@ -2,6 +2,7 @@ package ru.rrenat358.core.cart.models;
 
 import lombok.Data;
 import ru.rrenat358.api.core.OrderItemDto;
+import ru.rrenat358.api.core.ProductDto;
 //import ru.rrenat358.core.entities.Product;
 
 import java.util.ArrayList;
@@ -19,11 +20,11 @@ public class Cart {
     }
 
 
-    public void addProduct(Product product) {
-        if (addProduct(product.getId())) {
+    public void addProduct(ProductDto productDto) {
+        if (addProduct(productDto.getId())) {
             return;
         }
-        itemList.add(new OrderItemDto(product));
+        itemList.add(new CartItem(productDto));
         recalculate();
     }
 

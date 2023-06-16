@@ -19,14 +19,27 @@ public class CartItem {
 
     public CartItem(ProductDto productDto) {
         this.productId = productDto.getId();
-        this.productTitle = productDto.getTitle();
+        this.productTitle = productDto.getName();
         this.quantity = 1;
         this.pricePerProduct = productDto.getPrice();
         this.price = productDto.getPrice();
     }
 
+/*
+    public CartItem(ProductDto productDto) {
+        this.productId = productDto.getId();
+        this.productName = productDto.getName();
+        this.quantity = 1;
+        this.pricePerProduct = productDto.getPrice();
+        this.price = productDto.getPrice();
+    }
+*/
+
     public void changeQuantity(int delta) {
         this.quantity += delta;
         this.price = this.quantity * this.pricePerProduct;
     }
+
+
+
 }
