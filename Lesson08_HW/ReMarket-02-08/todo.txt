@@ -20,6 +20,7 @@ auth-service
 api-service
 auth-service
 cart-service
+core-service
 gateway-service
 
 

@@ -1,43 +1,43 @@
 package ru.rrenat358.core.services;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.rrenat358.api.carts.CartDto;
 import ru.rrenat358.api.core.OrderDetailsDto;
 import ru.rrenat358.core.entities.Order;
 import ru.rrenat358.core.entities.OrderItem;
+import ru.rrenat358.core.integrations.CartServiceIntegration;
 import ru.rrenat358.core.repositories.OrderRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 @Service
 @RequiredArgsConstructor
 public class OrderService {
 
     private final ProductsService productsService;
-    private final CartService cartService;
     private final OrderRepository orderRepository;
+    private final CartServiceIntegration cartServiceIntegration;
 
 
 
     @Transactional
-    public void createOrder(User user, OrderDetailsDto orderDetailsDto) {
+    public void createOrder(String username, OrderDetailsDto orderDetailsDto) {
         Order order = new Order();
-        String cartKey = cartService.getCartUuidFromSuffix(user.getUsername());
-        Cart currentCart = cartService.getCurrentCart(cartKey);
+//        String cartKey = cartService.getCartUuidFromSuffix(username.getUsername());
+        CartDto currentCart = cartServiceIntegration.getUserCart(username);
 
-        order.setUser(user);
+        order.setUsername(username);
         order.setTotalPrice(currentCart.getTotalPrice());
         order.setAddress(orderDetailsDto.getAddress());
         order.setPhone(orderDetailsDto.getPhone());
 
-//        List<OrderItemDto> itemList = currentCart.getItemList()
+//        List<OrderItemDto> orderItemList = currentCart.getItemList()
 //                        .stream().toList();
 
-        List<OrderItem> itemList = currentCart.getItemList().stream()
+        List<OrderItem> orderItemList = currentCart.getItems().stream()
                 .map(orderItemDto -> {
                     OrderItem orderItem = new OrderItem();
                     orderItem.setOrder(order);
@@ -49,9 +49,9 @@ public class OrderService {
                     return orderItem;
                 }).collect(Collectors.toList());
 
-        order.setItems(itemList);
+        order.setItems(orderItemList);
         orderRepository.save(order);
-        cartService.clearCart(cartKey);
+        cartServiceIntegration.clearUserCart(username);
     }
 
     public List<Order> getAllOrdersByCurrentUser(String userName) {

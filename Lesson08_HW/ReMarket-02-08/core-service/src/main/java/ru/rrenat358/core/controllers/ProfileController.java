@@ -2,24 +2,20 @@ package ru.rrenat358.core.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.api.core.ProfileDto;
-
-import java.security.Principal;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/profile")
 public class ProfileController {
 
-    private final UserService userService;
     @GetMapping
-    public ProfileDto getCurrentUserInfo(Principal principal) {
+    public ProfileDto getCurrentUserInfo(@RequestHeader String username) {
 //         User user = userService.findAllByUsername(principal.getName());
-        return new ProfileDto(
-                principal.getName()
-        );
+        return new ProfileDto(username);
     }
 
 

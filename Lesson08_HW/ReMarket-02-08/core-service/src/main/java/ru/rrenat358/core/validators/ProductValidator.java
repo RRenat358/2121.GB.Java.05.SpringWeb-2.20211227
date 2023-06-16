@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class ProductValidator {
 
-    public void validator(ProductDto productDto) {
+    public void validate(ProductDto productDto) {
 
         List<String> errorMessages = new ArrayList<>();
 

@@ -24,11 +24,6 @@ public class ProductsController {
     //============================================================
     // GET
 
-    // NoUsed
-//    @GetMapping("")
-//    public List<Product> findAll() {
-//        return productsService.findAll();
-//    }
 
     @GetMapping
     public Page<ProductDto> findByFilter(
@@ -59,7 +54,7 @@ public class ProductsController {
 
     @PostMapping
     public ProductDto saveNewProduct(@RequestBody ProductDto productDto) {
-        productValidator.validator(productDto);
+        productValidator.validate(productDto);
         Product product = productConverter.dtoToEntity(productDto);
         product = productsService.saveProduct(product);
         return productConverter.entityToDto(product);
@@ -85,6 +80,7 @@ public class ProductsController {
     //============================================================
     @PutMapping
     public ProductDto updateProduct(@RequestBody ProductDto productDto) {
+        productValidator.validate(productDto);
         Product product = productConverter.dtoToEntity(productDto);
         product = productsService.updateProduct(product);
         return productConverter.entityToDto(product);

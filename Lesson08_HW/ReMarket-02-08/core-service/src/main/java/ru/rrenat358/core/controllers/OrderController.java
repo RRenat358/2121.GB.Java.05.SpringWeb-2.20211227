@@ -10,9 +10,10 @@ import ru.rrenat358.core.converters.OrderConverter;
 import ru.rrenat358.core.entities.Order;
 import ru.rrenat358.core.services.OrderService;
 
-import java.security.Principal;
+//import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/api/v1/orders")
@@ -20,8 +21,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderController {
 
-    //    private final Cart cart;
-    private final UserService userService;
     private final OrderService orderService;
     private final OrderConverter orderConverter;
 
@@ -29,19 +28,16 @@ public class OrderController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createOrder(
-            Principal principal,
+            @RequestHeader String username,
             @RequestBody OrderDetailsDto orderDetailsDto
     ) {
-        User user = userService.findByUsername(principal.getName())
-                .orElseThrow(() -> new RuntimeException("noUser"));
-        orderService.createOrder(user, orderDetailsDto);
+        orderService.createOrder(username, orderDetailsDto);
     }
 
 
     @GetMapping
-    public List<OrderDto> getAllOrdersByCurrentUser(Principal principal) {
-        String userName = principal.getName();
-        List<Order> orderList = orderService.getAllOrdersByCurrentUser(userName);
+    public List<OrderDto> getAllOrdersByCurrentUser(@RequestHeader String username) {
+        List<Order> orderList = orderService.getAllOrdersByCurrentUser(username);
         //todo сделать конвертер листов для OrderDto
         List<OrderDto> orderDtoList = orderList.stream()
                 .map(order -> orderConverter.entityToDto(order)).collect(Collectors.toList());

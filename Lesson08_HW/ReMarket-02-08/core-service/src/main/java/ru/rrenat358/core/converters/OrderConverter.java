@@ -26,9 +26,9 @@ public class OrderConverter {
     }
 
     public OrderDto entityToDto(Order order) {
-        return new OrderDto(
+        OrderDto orderDto = new OrderDto(
                 order.getId(),
-                order.getUser().getUsername(),
+                order.getUsername(),
                 order.getTotalPrice(),
                 order.getAddress(),
                 order.getPhone(),
@@ -36,6 +36,7 @@ public class OrderConverter {
                         .map(orderItemConverter::entityToDto)
                         .collect(Collectors.toList())
         );
+        return orderDto;
     }
 
 

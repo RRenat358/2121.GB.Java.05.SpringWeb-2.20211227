@@ -1,7 +1,8 @@
 server:
   port: 8189
   servlet:
-    context-path: /app
+#    context-path: /app
+    context-path: /web-market-core
 utils:
   cart:
     prefix: SPRING_WEB_
@@ -21,3 +22,6 @@ spring:
       enabled: true
       settings:
         web-allow-others: false
+integrations:
+  cart-service:
+    url: http://localhost:5555/cart
