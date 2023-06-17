@@ -131,7 +131,7 @@ values
 -- //============================================================
 create table orders (
     id              bigserial primary key,
-    user_id         bigint not null references users (id),
+    user_id         varchar(255) not null,
     total_price     int not null,
     address         varchar(255),
     phone           varchar(255),
@@ -153,7 +153,7 @@ create table order_items (
 -- //============================================================
 
 insert into orders (user_id, total_price, address, phone)
-values (1, 200, 'ул.Ипподромная 54', '89670670112');
+values ('bob', 200, 'ул.Ипподромная 54', '89670670112');
 
 insert into order_items (product_id, order_id, quantity, price_per_product, price)
 values (1, 1, 2, 100, 200);
