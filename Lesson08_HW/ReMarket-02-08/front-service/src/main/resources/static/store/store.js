@@ -24,7 +24,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
     }
 
     $scope.generatePagesIndexes = function (startPage, endPage) {
-        let arr = [1,2,3];
+        let arr = [];
         for (let i = startPage; i < endPage + 1; i++) {
             arr.push(i);
         }
