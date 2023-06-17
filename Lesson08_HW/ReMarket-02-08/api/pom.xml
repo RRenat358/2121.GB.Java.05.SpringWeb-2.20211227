@@ -7,8 +7,6 @@
     <groupId>ru.rrenat358</groupId>
     <artifactId>api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-<!--    <name>demo</name>-->
-<!--    <description>Demo project for Spring Boot</description>-->
 
 <!--    <properties>-->
 <!--        <maven.compiler.source>11</maven.compiler.source>-->
