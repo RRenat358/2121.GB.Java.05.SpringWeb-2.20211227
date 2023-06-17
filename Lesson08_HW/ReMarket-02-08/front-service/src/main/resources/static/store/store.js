@@ -1,5 +1,6 @@
 angular.module('market-front').controller('storeController', function ($scope, $http, $location, $localStorage) {
-    const contextPath = 'http://localhost:8189/app';
+    const contextPath = 'http://localhost:5555/core';
+    const pathToCart = 'http://localhost:5555/cart';
 
     //============================================================
     //Page<Product> findByFilter()
@@ -23,7 +24,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
     }
 
     $scope.generatePagesIndexes = function (startPage, endPage) {
-        let arr = [];
+        let arr = [1,2,3];
         for (let i = startPage; i < endPage + 1; i++) {
             arr.push(i);
         }
@@ -97,7 +98,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
 
     //============================================================
     $scope.addToCart = function (id) {
-        $http.get(contextPath + '/api/v1/cart/' + $localStorage.springWebGuestCartId + '/add/' + id)
+        $http.get(pathToCart + '/api/v1/cart/' + $localStorage.springWebGuestCartId + '/add/' + id)
             .then(function (response) {
             });
     }

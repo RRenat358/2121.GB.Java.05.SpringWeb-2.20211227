@@ -6,10 +6,13 @@ auth-service
 - configs/JwtRequestFilter.class = нужен ли???
 
 
+
 front-service
-/static
+есть вопросы
 
 
+Сравнить все
+pom.xml
 
 
 ============================================================
@@ -21,6 +24,7 @@ api-service
 auth-service
 cart-service
 core-service
+front-service
 gateway-service
 
 

@@ -1,5 +1,6 @@
 angular.module('market-front').controller('cartController', function ($scope, $http, $location, $localStorage) {
-    const contextPath = 'http://localhost:8189/app';
+    const contextPath = 'http://localhost:5555/cart';
+    const pathToCore = 'http://localhost:5555/core';
 
     $scope.loadCart = function () {
         $http({
@@ -33,7 +34,7 @@ angular.module('market-front').controller('cartController', function ($scope, $h
 
     $scope.checkOut = function () {
         $http({
-            url: contextPath + '/api/v1/orders',
+            url: pathToCore + '/api/v1/orders',
             method: 'POST',
             data: $scope.orderDetails
         }).then(function (response) {
