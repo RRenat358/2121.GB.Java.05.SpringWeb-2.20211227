@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.rrenat358.auth.entites.Role;
-import ru.rrenat358.auth.entites.User;
+import ru.rrenat358.auth.entities.Role;
+import ru.rrenat358.auth.entities.User;
 import ru.rrenat358.auth.repositories.UserRepository;
 
 import java.util.Collection;

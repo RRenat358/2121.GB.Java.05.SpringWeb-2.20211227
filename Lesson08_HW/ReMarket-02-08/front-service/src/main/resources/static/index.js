@@ -87,7 +87,7 @@ angular.module('market-front').controller('indexController', function ($scope, $
             });
     };
 
-    $scope.tryToLogout = function () {
+    $rootScope.tryToLogout = function () {
         $scope.clearUser();
         $scope.user = null;
         $location.path('/');
