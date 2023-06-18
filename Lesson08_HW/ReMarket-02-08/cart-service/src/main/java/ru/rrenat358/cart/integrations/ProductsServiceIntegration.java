@@ -1,7 +1,5 @@
 package ru.rrenat358.cart.integrations;
 
-//import com.geekbrains.spring.web.api.core.ProductDto;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

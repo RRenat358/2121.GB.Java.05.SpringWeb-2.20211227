@@ -88,19 +88,11 @@ public class ProductsService {
         productFind.setName(product.getName());
         productFind.setPrice(product.getPrice());
         //etc.
-        productsRepository.save(productFind);
+        productsRepository.save(productFind); //?? точно нужно
         return productFind;
     }
 
-    // OR ------------------
-    @Transactional
-    public Product updateProduct2(ProductDto productDto) {
-        Product product = productsRepository.findById(productDto.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("Невозможно обновить продукта, не найден в базе, id: " + productDto.getId()));
-        product.setPrice(productDto.getPrice());
-        product.setName(productDto.getName());
-        return product;
-    }
+
     //============================================================
 
 

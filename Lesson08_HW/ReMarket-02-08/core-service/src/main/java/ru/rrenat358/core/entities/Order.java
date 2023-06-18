@@ -27,7 +27,7 @@ public class Order {
     private String username;
 
     @Column(name = "total_price")
-    private int totalPrice;
+    private Integer totalPrice;
 
     @Column(name = "address")
     private String address;

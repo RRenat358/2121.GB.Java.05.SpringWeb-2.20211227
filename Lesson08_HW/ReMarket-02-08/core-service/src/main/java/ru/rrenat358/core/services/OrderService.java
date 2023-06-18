@@ -54,8 +54,8 @@ public class OrderService {
         cartServiceIntegration.clearUserCart(username);
     }
 
-    public List<Order> getAllOrdersByCurrentUser(String userName) {
-        return orderRepository.findAllOrdersByUsername(userName);
+    public List<Order> getAllOrdersByCurrentUser(String username) {
+        return orderRepository.findAllOrdersByUsername(username);
     }
 
 

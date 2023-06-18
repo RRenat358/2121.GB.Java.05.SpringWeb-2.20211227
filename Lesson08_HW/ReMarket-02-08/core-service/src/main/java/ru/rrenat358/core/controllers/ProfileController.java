@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.rrenat358.api.core.ProfileDto;
 
 @RestController
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RequestMapping("/api/v1/profile")
 public class ProfileController {
 

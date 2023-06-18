@@ -10,42 +10,42 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "products")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
 
     @Column(name = "price")
-    Integer price;
+    private Integer price;
 
 
 
     @Column(name = "proteins")
-    String proteins;
+    private String proteins;
 
     @Column(name = "fats")
-    String fats;
+    private String fats;
 
     @Column(name = "carbohydrates")
-    String carbohydrates;
+    private String carbohydrates;
 
     @Column(name = "calories")
-    String calories;
+    private String calories;
 
     //todo хранить в БД  со @OneToMany/@ManyToOne
     @Column(name = "group_product")
-    String groupProduct;
+    private String groupProduct;
 
 
     @CreationTimestamp

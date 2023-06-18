@@ -11,10 +11,10 @@ import java.util.List;
 //@AllArgsConstructor
 public class FieldsValidationError {
 
-    private List<String> fieldsValidationError;
+    private List<String> fieldsValidationErrorMessage;
 
-    public FieldsValidationError(List<String> fieldsValidationError) {
-        this.fieldsValidationError = fieldsValidationError;
+    public FieldsValidationError(List<String> fieldsValidationErrorMessage) {
+        this.fieldsValidationErrorMessage = fieldsValidationErrorMessage;
     }
 
 }
