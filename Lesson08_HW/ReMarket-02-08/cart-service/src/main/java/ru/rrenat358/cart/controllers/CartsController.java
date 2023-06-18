@@ -2,7 +2,9 @@ package ru.rrenat358.cart.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.rrenat358.api.carts.CartDto;
 import ru.rrenat358.api.dto.StringResponse;
+import ru.rrenat358.cart.converters.CartConverter;
 import ru.rrenat358.cart.services.CartService;
 import ru.rrenat358.cart.models.Cart;
 
@@ -12,11 +14,12 @@ import ru.rrenat358.cart.models.Cart;
 @RequiredArgsConstructor
 public class CartsController {
     private final CartService cartService;
+    private final CartConverter cartConverter;
 
 
     @GetMapping("/{uuid}")
-    public Cart getCart(@RequestHeader(required = false) String username, @PathVariable String uuid) {
-        return cartService.getCurrentCart(getCurrentCartUuid(username, uuid));
+    public CartDto getCart(@RequestHeader(required = false) String username, @PathVariable String uuid) {
+        return cartConverter.modelToDto(cartService.getCurrentCart(getCurrentCartUuid(username, uuid)));
     }
 
     @GetMapping("/generate")
