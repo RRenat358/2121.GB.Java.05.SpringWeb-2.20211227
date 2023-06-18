@@ -3,7 +3,6 @@ package ru.rrenat358.api.core;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//import ru.rrenat358.core.entities.Product;
 
 @Data
 @NoArgsConstructor

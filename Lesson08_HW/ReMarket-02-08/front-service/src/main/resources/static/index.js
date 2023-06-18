@@ -35,7 +35,7 @@
                 let payload = JSON.parse(atob(jwt.split('.')[1]));
                 let currentTime = parseInt(new Date().getTime() / 1000);
                 if (currentTime > payload.exp) {
-                    console.log("Token is expired!!!");
+                    console.log("\n===== Token is expired!!! =====");
                     delete $localStorage.springWebUser;
                     $http.defaults.headers.common.Authorization = '';
                 }
@@ -49,6 +49,7 @@
         if (!$localStorage.springWebGuestCartId) {
             $http.get('http://localhost:5555/cart/api/v1/cart/generate')
                 .then(function successCallback(response) {
+                    console.log("\n===== cart/generate =====");
                     $localStorage.springWebGuestCartId = response.data.value;
                 });
         }
@@ -70,6 +71,7 @@ angular.module('market-front').controller('indexController', function ($scope, $
     $scope.tryToAuth = function () {
         $http.post('http://localhost:5555/auth/auth', $scope.user)
             .then(function successCallback(response) {
+                console.log("\n===== auth/auth =====");
                 if (response.data.token) {
                     $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
                     $localStorage.springWebUser = {username: $scope.user.username, token: response.data.token};
@@ -107,6 +109,7 @@ angular.module('market-front').controller('indexController', function ($scope, $
     };
 
     //============================================================
+/*
     $scope.showCurrentUserInfo = function () {
         $http.get('http://localhost:5555/api/api/v1/profile')
             .then(function successCallback(response) {
@@ -118,6 +121,7 @@ angular.module('market-front').controller('indexController', function ($scope, $
                 alert('UNAUTHORIZED');
             });
     };
+*/
 
     //============================================================
     // $scope.saveNewUser = function () {
