@@ -22,8 +22,8 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "title")
+    private String title;
 
 
     @Column(name = "price")
@@ -58,9 +58,9 @@ public class Product {
 
 
 
-    public Product(Long id, String name, Integer price) {
+    public Product(Long id, String title, Integer price) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.price = price;
     }
 

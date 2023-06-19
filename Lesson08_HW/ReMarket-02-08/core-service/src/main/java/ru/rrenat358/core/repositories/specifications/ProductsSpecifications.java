@@ -5,8 +5,8 @@ import ru.rrenat358.core.entities.Product;
 
 public class ProductsSpecifications {
 
-    public static Specification<Product> nameLike(String namePart) {
-        return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("name"), String.format("%%%s%%", namePart));
+    public static Specification<Product> titleLike(String titlePart) {
+        return (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("title"), String.format("%%%s%%", titlePart));
     }
 
     public static Specification<Product> priceGreaterOrEqualsThan(Integer price) {

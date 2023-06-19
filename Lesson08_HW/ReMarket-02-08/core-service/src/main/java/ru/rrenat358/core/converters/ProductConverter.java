@@ -12,11 +12,11 @@ public class ProductConverter {
 
     //============================================================
     public Product dtoToEntity(ProductDto productDto) {
-        return new Product(productDto.getId(), productDto.getName(), productDto.getPrice());
+        return new Product(productDto.getId(), productDto.getTitle(), productDto.getPrice());
     }
 
     public ProductDto entityToDto(Product product) {
-        return new ProductDto(product.getId(), product.getName(), product.getPrice());
+        return new ProductDto(product.getId(), product.getTitle(), product.getPrice());
     }
 
     //============================================================
@@ -26,7 +26,7 @@ public class ProductConverter {
                 .map(productDto -> {
                     Product product = new Product();
                     product.setId(productDto.getId());
-                    product.setName(productDto.getName());
+                    product.setTitle(productDto.getTitle());
                     product.setPrice(productDto.getPrice());
                     return product;
                 })
@@ -40,7 +40,7 @@ public class ProductConverter {
                 .map(product -> {
                     ProductDto productDto = new ProductDto();
                     productDto.setId(product.getId());
-                    productDto.setName(product.getName());
+                    productDto.setTitle(product.getTitle());
                     productDto.setPrice(product.getPrice());
                     return productDto;
                 })

@@ -19,7 +19,7 @@ public class CartItem {
 
     public CartItem(ProductDto productDto) {
         this.productId = productDto.getId();
-        this.productTitle = productDto.getName();
+        this.productTitle = productDto.getTitle();
         this.quantity = 1;
         this.pricePerProduct = productDto.getPrice();
         this.price = productDto.getPrice();

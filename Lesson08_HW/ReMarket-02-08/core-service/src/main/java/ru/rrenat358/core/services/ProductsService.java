@@ -6,7 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import ru.rrenat358.api.core.ProductDto;
 import ru.rrenat358.api.exceptions.ResourceNotFoundException;
 import ru.rrenat358.core.entities.Product;
 import ru.rrenat358.core.repositories.ProductsRepository;
@@ -34,7 +33,7 @@ public class ProductsService {
         Specification<Product> spec = Specification.where(null);
 
         if (namePart != null) {
-            spec = spec.and(ProductsSpecifications.nameLike(namePart));
+            spec = spec.and(ProductsSpecifications.titleLike(namePart));
         }
         if (minPrice != null) {
             spec = spec.and(ProductsSpecifications.priceGreaterOrEqualsThan(minPrice));
@@ -85,7 +84,7 @@ public class ProductsService {
     public Product updateProduct(Product product) {
         Product productFind = productsRepository.findById(product.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Продукт не найден для ID : " + product.getId()));
-        productFind.setName(product.getName());
+        productFind.setTitle(product.getTitle());
         productFind.setPrice(product.getPrice());
         //etc.
         productsRepository.save(productFind); //?? точно нужно
