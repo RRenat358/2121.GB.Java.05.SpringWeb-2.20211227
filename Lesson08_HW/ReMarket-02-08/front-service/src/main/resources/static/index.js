@@ -35,7 +35,7 @@
                 let payload = JSON.parse(atob(jwt.split('.')[1]));
                 let currentTime = parseInt(new Date().getTime() / 1000);
                 if (currentTime > payload.exp) {
-                    console.log("\n===== Token is expired!!! =====");
+                    console.log("\n===== Срок действия токена истек !!! =====");
                     delete $localStorage.springWebUser;
                     $http.defaults.headers.common.Authorization = '';
                 }
@@ -124,14 +124,16 @@ angular.module('market-front').controller('indexController', function ($scope, $
 */
 
     //============================================================
-    // $scope.saveNewUser = function () {
-    //     console.log($scope.newUser);
-    //     $http.post('http://localhost:8189/app/user-registration', $scope.newUser)
-    //         .then(function (response) {
-    //             console.log($scope.newUser);
-    //             // $scope.loadProduct();
-    //         });
-    // }
+/*
+    $scope.saveNewUser = function () {
+        console.log($scope.newUser);
+        $http.post('http://localhost:8189/app/user-registration', $scope.newUser)
+            .then(function (response) {
+                console.log($scope.newUser);
+                // $scope.loadProduct();
+            });
+    }
+*/
 
 /*
     $scope.saveNewUser = function (name, password, email) {

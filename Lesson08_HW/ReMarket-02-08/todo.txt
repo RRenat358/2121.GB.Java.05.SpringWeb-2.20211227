@@ -2,8 +2,7 @@
     не сделано
 ============================================================
 
-auth-service
-- configs/JwtRequestFilter.class = нужен ли???
+
 
 
 
@@ -11,8 +10,7 @@ front-service
 есть вопросы
 
 
-Сравнить все
-pom.xml
+
 
 
 ============================================================
@@ -28,10 +26,12 @@ front-service
 gateway-service
 
 
+Сравнить все
+pom.xml
 
 
-
-
+auth-service
+- configs/JwtRequestFilter.class = нужен ли???
 
 
 

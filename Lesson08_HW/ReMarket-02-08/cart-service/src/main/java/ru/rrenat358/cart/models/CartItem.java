@@ -1,7 +1,5 @@
 package ru.rrenat358.cart.models;
 
-//import com.geekbrains.spring.web.api.core.ProductDto;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

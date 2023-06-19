@@ -28,7 +28,7 @@ public class ProductsController {
     @GetMapping
     public Page<ProductDto> findByFilter(
             @RequestParam(name = "p", defaultValue = "1") Integer page,
-            @RequestParam(name = "namePart", required = false) String namePart,
+            @RequestParam(name = "titlePart", required = false) String titlePart,
             @RequestParam(name = "minPrice", required = false) Integer minPrice,
             @RequestParam(name = "maxPrice", required = false) Integer maxPrice,
             @RequestParam(name = "groupPart", required = false) String groupPart
@@ -36,7 +36,7 @@ public class ProductsController {
         if (page < 1) {
             page = 1;
         }
-        return productsService.findByFilter(page, namePart, minPrice, maxPrice, groupPart)
+        return productsService.findByFilter(page, titlePart, minPrice, maxPrice, groupPart)
                 .map(product -> productConverter.entityToDto(product));
     }
 

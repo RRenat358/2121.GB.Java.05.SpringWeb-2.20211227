@@ -18,7 +18,7 @@ values ('Milk', 100),
 -- //============================================================
 create table products (
     id bigserial        primary key,
-    name                varchar(255),
+    title               varchar(255),
     proteins            varchar(255),
     fats                varchar(255),
     carbohydrates       varchar(255),
@@ -31,7 +31,7 @@ create table products (
                       );
 
 insert into products (
-    name,
+    title,
     proteins, fats, carbohydrates, calories,
     group_product,
     price)
@@ -131,7 +131,7 @@ values
 -- //============================================================
 create table orders (
     id              bigserial primary key,
-    username         varchar(255) not null,
+    username        varchar(255) not null,
     total_price     int not null,
     address         varchar(255),
     phone           varchar(255),

@@ -11,7 +11,7 @@ angular.module('market-front').controller('storeController', function ($scope, $
             method: 'GET',
             params: {
                 p: pageIndex,
-                namePart: $scope.filter ? $scope.filter.namePart : null,
+                titlePart: $scope.filter ? $scope.filter.titlePart : null,
                 minPrice: $scope.filter ? $scope.filter.minPrice : null,
                 maxPrice: $scope.filter ? $scope.filter.maxPrice : null,
                 groupPart: $scope.filter ? $scope.filter.groupPart : null

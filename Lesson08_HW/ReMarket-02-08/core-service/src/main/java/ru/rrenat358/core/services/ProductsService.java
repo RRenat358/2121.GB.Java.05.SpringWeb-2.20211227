@@ -25,15 +25,15 @@ public class ProductsService {
 
     public Page<Product> findByFilter(
             Integer page,
-            String namePart,
+            String titlePart,
             Integer minPrice, Integer maxPrice,
             String groupPart
     ) {
         PageRequest pageRequest = PageRequest.of(page - 1, 5);
         Specification<Product> spec = Specification.where(null);
 
-        if (namePart != null) {
-            spec = spec.and(ProductsSpecifications.titleLike(namePart));
+        if (titlePart != null) {
+            spec = spec.and(ProductsSpecifications.titleLike(titlePart));
         }
         if (minPrice != null) {
             spec = spec.and(ProductsSpecifications.priceGreaterOrEqualsThan(minPrice));

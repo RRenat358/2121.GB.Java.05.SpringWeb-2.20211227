@@ -38,7 +38,7 @@ public class OrderService {
 //                        .stream().toList();
 
         List<OrderItem> orderItemList = currentCart.getItems().stream()
-                .map(orderItemDto -> {
+                .map(orderItemDto -> { // orderItemDto =? o
                     OrderItem orderItem = new OrderItem();
                     orderItem.setOrder(order);
                     orderItem.setQuantity(orderItemDto.getQuantity());
