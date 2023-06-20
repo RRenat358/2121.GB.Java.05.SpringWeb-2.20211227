@@ -1,5 +1,6 @@
 package ru.rrenat358.api.dto;
 
+
 public class StringResponse {
     private String value;
 
