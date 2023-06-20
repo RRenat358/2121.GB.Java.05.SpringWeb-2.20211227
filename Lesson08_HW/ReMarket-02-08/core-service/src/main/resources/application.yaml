@@ -6,22 +6,36 @@ server:
 utils:
   cart:
     prefix: SPRING_WEB_
+
+#spring:
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:mydatabase;MODE=PostgreSQL
+#    username: sa
+#    password:
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        web-allow-others: false
+
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:mydatabase;MODE=PostgreSQL
-    username: sa
-    password:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: postgres
   jpa:
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: false
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+
 integrations:
   cart-service:
     url: http://localhost:5555/cart

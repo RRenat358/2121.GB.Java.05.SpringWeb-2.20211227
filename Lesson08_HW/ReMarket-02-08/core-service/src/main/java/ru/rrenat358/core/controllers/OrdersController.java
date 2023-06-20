@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/orders")
-@Data
+//@Data
 @RequiredArgsConstructor
-public class OrderController {
+public class OrdersController {
 
     private final OrderService orderService;
     private final OrderConverter orderConverter;

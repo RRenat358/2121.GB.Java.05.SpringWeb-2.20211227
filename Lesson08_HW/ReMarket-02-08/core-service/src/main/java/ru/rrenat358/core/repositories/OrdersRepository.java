@@ -8,7 +8,7 @@ import ru.rrenat358.core.entities.Order;
 import java.util.List;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrdersRepository extends JpaRepository<Order, Long> {
 
     @Query("SELECT o FROM Order o WHERE o.username = ?1")
     List<Order> findAllOrdersByUsername(String userName);

@@ -8,7 +8,7 @@ import ru.rrenat358.api.core.OrderDetailsDto;
 import ru.rrenat358.core.entities.Order;
 import ru.rrenat358.core.entities.OrderItem;
 import ru.rrenat358.core.integrations.CartServiceIntegration;
-import ru.rrenat358.core.repositories.OrderRepository;
+import ru.rrenat358.core.repositories.OrdersRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final ProductsService productsService;
-    private final OrderRepository orderRepository;
+    private final OrdersRepository ordersRepository;
     private final CartServiceIntegration cartServiceIntegration;
 
 
@@ -50,12 +50,12 @@ public class OrderService {
                 }).collect(Collectors.toList());
 
         order.setItems(orderItemList);
-        orderRepository.save(order);
+        ordersRepository.save(order);
         cartServiceIntegration.clearUserCart(username);
     }
 
     public List<Order> getAllOrdersByCurrentUser(String username) {
-        return orderRepository.findAllOrdersByUsername(username);
+        return ordersRepository.findAllOrdersByUsername(username);
     }
 
 
