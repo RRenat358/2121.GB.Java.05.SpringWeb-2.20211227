@@ -12,7 +12,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.flamexander.rabbitmq.demos</groupId>
+    <groupId>ru.rrenat358.rabbitmq.demos</groupId>
     <artifactId>spring-rabbitmq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-rabbitmq</name>
