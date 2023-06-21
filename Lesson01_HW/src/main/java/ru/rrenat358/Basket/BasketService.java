@@ -3,9 +3,9 @@ package ru.rrenat358.Basket;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.rrenat358.entities.Product;
-import ru.rrenat358.exceptions.ResourceNotFoundException;
-import ru.rrenat358.repositories.ProductsRepository;
+import ru.rrenat358.core.entities.Product;
+import ru.rrenat358.cart.exceptions.ResourceNotFoundException;
+import ru.rrenat358.core.repositories.ProductsRepository;
 
 import java.util.List;
 

@@ -1,0 +1,110 @@
+<div>
+
+    <div class="row g-2">
+
+
+        <!--============================================================-->
+        <div class="col-6 col-md-2">
+
+            <hr>
+            <h4>Фильтр продуктов</h4>
+            <form novalidate ng-submit="loadProducts()">
+                <div class="form-floating input-group-sm">
+                    <input type="text" class="form-control" id="filterTitle" placeholder="имя "
+                           ng-model="filter.titlePart">
+                    <!--            <label for="filterName">имя продукта</label>-->
+                </div>
+                <br>
+                <div class="form-floating input-group-sm">
+                    <input type="number" class="form-control" id="filterMinPrice" placeholder="цена от "
+                           ng-model="filter.minPrice">
+                    <!--            <label for="filterMinPrice">мин. цена</label>-->
+                </div>
+                <br>
+                <div class="form-floating input-group-sm">
+                    <input type="number" class="form-control" id="filterMaxPrice" placeholder="цена до "
+                           ng-model="filter.maxPrice">
+                    <!--            <label for="filterMaxPrice">макс. цена</label>-->
+                </div>
+                <br>
+                <br>
+
+                <div class="form-floating input-group-sm">
+                    <input type="text" class="form-control" id="filterGroup" placeholder="группа "
+                           ng-model="filter.groupPart">
+                    <span style="font-size: 50%;">фрукты,ягоды,овощи,зелень,сухофрукты,орехи</span>
+                    <!--            <label for="filterGroup">группа продукта</label>-->
+                </div>
+                <br>
+
+
+                <button class="btn btn-outline-warning btn-sm" style="width: 100%;" type="submit">Применить</button>
+            </form>
+            <br>
+            <br>
+
+        </div>
+
+        <!--============================================================-->
+        <div class="col-sm-6 col-md-10">
+            <hr>
+            <h3>Список продуктов</h3>
+            <table class="table table-hover" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>ID</td>
+                    <td>Товар</td>
+                    <td>Цена</td>
+                    <!--            <td>Изменить цену</td>-->
+                    <td>Удалить из БД</td>
+                    <td>В корзину</td>
+                </tr>
+                <tbody>
+                <tr ng-repeat="p in ProductList.content">
+                    <td>{{p.id}}</td>
+                    <td>{{p.title}}</td>
+                    <td>{{p.price}}</td>
+                    <!--            <td>-->
+                    <!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>-->
+                    <!--                {{p.price}}-->
+                    <!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>-->
+                    <!--            </td>-->
+                    <td>
+                        <button class="btn btn-danger" ng-click="deleteProduct(p.id)">[Х]</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-success" ng-click="addToCart(p.id)">toCart</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item" ng-repeat="pageIndex in paginationArray">
+                        <button class="page-link" ng-click="loadProducts(pageIndex)">{{pageIndex}}</button>
+                    </li>
+                </ul>
+            </nav>
+            <br>
+            <br>
+
+            <!--============================================================-->
+            <hr>
+            <h4>Добавить Продукт</h4>
+            <form novalidate ng-submit="saveNewProductFun()">
+                <input class="form-control" type="text" id="addTitle" placeholder="имя продукта"
+                       ng-model="newProduct.name">
+                <br>
+                <input class="form-control" type="number" id="addPrice" placeholder="цена" ng-model="newProduct.price">
+                <br>
+                <button type="submit" class="btn btn-outline-success">Сохранить</button>
+            </form>
+            <br>
+
+        </div>
+
+        <!--============================================================-->
+
+    </div>
+
+</div>

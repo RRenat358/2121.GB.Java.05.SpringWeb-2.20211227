@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.rrenat358.converters.ProductConverter;
-import ru.rrenat358.dto.ProductDto;
-import ru.rrenat358.entities.Product;
+import ru.rrenat358.cart.converters.ProductConverter;
+import ru.rrenat358.core.dto.ProductDto;
+import ru.rrenat358.core.entities.Product;
 
 import java.util.List;
 

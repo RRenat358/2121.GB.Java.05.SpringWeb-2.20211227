@@ -1,0 +1,52 @@
+<div>
+    <!--============================================================-->
+    <hr>
+    <h3>Корзина</h3>
+    <table class="table table-hover" cellpadding="0" cellspacing="0">
+        <tr>
+            <!--            <td>ID</td>-->
+            <td>Товар</td>
+            <td>Количество</td>
+            <td>Цена</td>
+            <!--            <td>Изменить цену</td>-->
+            <!--            <td>Действие</td>-->
+        </tr>
+        <tbody>
+        <tr ng-repeat="item in cart.itemList">
+            <!--            <td>{{item.id}}</td>-->
+<!--            <td>{{item.productName}}</td>-->
+            <td>{{item.productTitle}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.pricePerProduct + ' x ' + item.quantity + ' = ' + item.price}}</td>
+            <!--            <td>-->
+            <!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, -5)">-</button>-->
+            <!--                {{item.pricePerProduct}}-->
+            <!--                <button class="btn btn-outline-primary" ng-click="changePriceToDelta(p.id, 5)">+</button>-->
+            <!--            </td>-->
+            <!--            <td></td>-->
+        <tr>
+            <td></td>
+            <td>Итого</td>
+            <td>{{cart.totalPrice}}</td>
+        </tr>
+        <!--        <td>-->
+        <!--            <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>-->
+        <!--        </td>-->
+        </tbody>
+    </table>
+    <button class="btn btn-danger" ng-click="clearCart()">Очистить корзину</button>
+    <br>
+
+    <!--============================================================-->
+    <hr>
+    <h3>Детали заказа</h3>
+    <form novalidate>
+        <input class="form-control" type="text" placeholder="Номер телефона получателя" ng-model="orderDetails.phone">
+        <p></p>
+        <input class="form-control" type="text" placeholder="Адрес доставки" ng-model="orderDetails.address">
+        <p></p>
+    </form>
+
+    <button class="btn btn-outline-success" ng-click="checkOut()" ng-show="isUserLoggedIn() && cart.itemList.length > 0">Оформить заказ</button>
+    <button class="btn btn-outline-secondary" ng-click="disabledCheckOut()" ng-show="!isUserLoggedIn() && cart.itemList.length > 0">Оформить заказ</button>
+</div>

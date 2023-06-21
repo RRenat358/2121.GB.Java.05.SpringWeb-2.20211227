@@ -1,6 +1,6 @@
 package ru.rrenat358.endpoints;
 
-import ru.rrenat358.services.GroupService;
+import ru.rrenat358.cart.services.GroupService;
 import ru.rrenat358.soap.groups.GetGroupByTitleRequest;
 import ru.rrenat358.soap.groups.GetGroupByTitleResponse;
 import lombok.RequiredArgsConstructor;
