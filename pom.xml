@@ -17,32 +17,32 @@
     </properties>
 
     <modules>
-        <module>Lesson01-Base</module>
-        <module>Lesson01_HW</module>
+<!--        <module>Lesson01-Base</module>-->
+<!--        <module>Lesson01_HW</module>-->
 
-        <module>Lesson02-Blocks</module>
-        <module>Lesson02_HW</module>
+<!--        <module>Lesson02-Blocks</module>-->
+<!--        <module>Lesson02_HW</module>-->
 
-        <module>Lesson03-Redis</module>
-        <module>Lesson03_HW</module>
+<!--        <module>Lesson03-Redis</module>-->
+<!--        <module>Lesson03_HW</module>-->
 
 <!--        <module>Lesson04-01-AOP</module>-->
-        <module>Lesson04-02-SOAP</module>
+<!--        <module>Lesson04-02-SOAP</module>-->
 <!--        <module>Lesson04_HW</module>-->
 
-        <module>Lesson05-Cloud-01</module>
-        <module>Lesson05_HW</module>
+<!--        <module>Lesson05-Cloud-01</module>-->
+<!--        <module>Lesson05_HW</module>-->
 
-        <module>Lesson06-Cloud-02</module>
-        <module>Lesson06_HW</module>
+<!--        <module>Lesson06-Cloud-02</module>-->
+<!--        <module>Lesson06_HW</module>-->
 
 <!--        <module>Lesson07-Test</module>-->
 <!--        <module>Lesson07_HW</module>-->
 
-        <module>Lesson08-Integration</module>
-        <module>Lesson08_HW</module>
+<!--        <module>Lesson08-Integration</module>-->
+<!--        <module>Lesson08_HW</module>-->
 
-        <module>Lesson09-RabbitMQ</module>
+<!--        <module>Lesson09-RabbitMQ</module>-->
 <!--        <module>Lesson09_HW</module>-->
 
 <!--        <module>Lesson10</module>-->

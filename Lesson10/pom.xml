@@ -4,10 +4,11 @@
 
     <packaging>pom</packaging>
 
-    <artifactId>Lesson06_HW</artifactId>
+    <artifactId>Lesson10</artifactId>
 
     <modules>
         <module>spring-web</module>
     </modules>
+
 
 </project>
