@@ -6,9 +6,9 @@
 
     <artifactId>Lesson10</artifactId>
 
-<!--    <modules>-->
-<!--        <module>spring-web</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>spring-web</module>
+    </modules>
 
 
 </project>

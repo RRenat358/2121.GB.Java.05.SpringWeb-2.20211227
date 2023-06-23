@@ -6,8 +6,8 @@
 
     <artifactId>Lesson06_HW</artifactId>
 
-<!--    <modules>-->
-<!--        <module>spring-web</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>spring-web</module>
+    </modules>
 
 </project>
