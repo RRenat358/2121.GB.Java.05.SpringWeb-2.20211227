@@ -34,6 +34,16 @@ public class ProductsService {
         return productsRepository.findAll(spec, PageRequest.of(page - 1, 8));
     }
 
+/*
+todo
+    запрос при добавлении товара в корзину
+    Hibernate:
+        select product0_.id as id1_2_0_,
+        product0_.created_at as created_2_2_0_,
+        product0_.price as price3_2_0_,
+        product0_.title as title4_2_0_,
+        product0_.updated_at as updated_5_2_0_ from products product0_ where product0_.id=?
+*/
     public Optional<Product> findById(Long id) {
         return productsRepository.findById(id);
     }
